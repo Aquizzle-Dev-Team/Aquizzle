@@ -3,7 +3,7 @@
 dist
 package-lock.json
 **/*solved*
-**/*Config.js*
+**/*Config.ts*
 !telemetry.config.json
-/public/*.js
+/public/*.ts
 /public/*.html
