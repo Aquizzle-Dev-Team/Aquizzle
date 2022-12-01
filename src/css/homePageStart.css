@@ -15,9 +15,10 @@
     width: 40%;
     height: 50px;
     border-radius: 5px;
-    background-color: lightcyan;
+    background-color: rgb(255, 255, 255);
     border: 1.5px solid;
 }
+
 .homePageStartDiv button:hover{
     background-image: url(../images/kermit.jpg);
     background-size: cover;

@@ -6,12 +6,12 @@
     grid-template-rows: auto;
     grid-template-areas:
     "history leaderboard aboutUs kys";
-    background-color: #303030;
+    background-color: #30303000;
     grid-area: homePageButtons;
 }
 .Div button{
-    margin: 10px;   
-    border-radius: 5px;
+    margin: 20px;   
+    border-radius: 100px;
 }
 .Div button:hover{
     background-image: url(../images/kermit.jpg);
@@ -21,21 +21,21 @@
 }
 .history{
     grid-area: history;
-    background-color: lightcyan;
+    background-color: rgb(255, 255, 255);
     border: 1.25px solid;
 }
 .leaderboard{
     grid-area: leaderboard;
-    background-color: lightcyan;
+    background-color: rgb(255, 255, 255);
     border: 1.25px solid;
 }
 .aboutUs{
     grid-area: aboutUs;
-    background-color: lightcyan;
+    background-color: rgb(255, 255, 255);
     border: 1.25px solid;
 }
 .kys{
     grid-area: kys;
-    background-color: lightcyan;
+    background-color: rgb(255, 255, 255);
     border: 1.25px solid;
 }

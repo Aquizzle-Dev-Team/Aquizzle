@@ -7,7 +7,7 @@ function HomePageButtonsView(){
             <button className="leaderboard">Leaderboard</button>
             <button className="history">History</button>
             <button className="aboutUs">About Us</button>
-            <button className="kys">Ngt</button>
+            <button className="kys">Choose Aquizzle</button>
         </div>
     )
 }
