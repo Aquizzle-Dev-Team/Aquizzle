@@ -5,5 +5,3 @@ package-lock.json
 **/*solved*
 **/*Config.ts*
 !telemetry.config.json
-/public/*.ts
-/public/*.html
