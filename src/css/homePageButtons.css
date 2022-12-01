@@ -1,0 +1,41 @@
+.Div{
+    margin-bottom: 10px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 25% 25% 25% auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "history leaderboard aboutUs kys";
+    background-color: #303030;
+    grid-area: homePageButtons;
+}
+.Div button{
+    margin: 10px;   
+    border-radius: 5px;
+}
+.Div button:hover{
+    background-image: url(../images/kermit.jpg);
+    background-size: cover;
+    background-position-y: -20px;
+    font-size: 20px;
+}
+.history{
+    grid-area: history;
+    background-color: lightcyan;
+    border: 1.25px solid;
+}
+.leaderboard{
+    grid-area: leaderboard;
+    background-color: lightcyan;
+    border: 1.25px solid;
+}
+.aboutUs{
+    grid-area: aboutUs;
+    background-color: lightcyan;
+    border: 1.25px solid;
+}
+.kys{
+    grid-area: kys;
+    background-color: lightcyan;
+    border: 1.25px solid;
+}

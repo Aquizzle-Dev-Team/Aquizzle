@@ -1,0 +1,27 @@
+.logoDiv{
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #303030;
+    grid-area: logo;
+}
+.logoDiv img{
+    height: 88%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .logoDiv img {
+      animation: logoDiv-img-float infinite 3s ease-in-out;
+    }
+}
+
+@keyframes logoDiv-img-float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }

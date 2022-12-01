@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 100px auto;
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+  "logo homePageButtons"
+  "startHomePage startHomePage";
+}
+.logo{
+  grid-area: logo;
+}
+.homePageButtons{
+  grid-area: homePageButtons;
+}
+.startHomePage{
+  grid-area: startHomePage;
+}

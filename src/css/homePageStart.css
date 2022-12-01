@@ -1,0 +1,42 @@
+.homePageStartDiv{
+    display: block;
+    text-align: center;
+    width: 350px;
+    grid-area: startHomePage;
+    margin: auto;
+    margin-top: 100px;
+}
+.homePageStartDiv img{
+    height: 78%;
+    width: 80%;
+}
+.homePageStartDiv button{
+    margin-top: 30px;
+    width: 40%;
+    height: 50px;
+    border-radius: 5px;
+    background-color: lightcyan;
+    border: 1.5px solid;
+}
+.homePageStartDiv button:hover{
+    background-image: url(../images/kermit.jpg);
+    background-size: cover;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .homePageStartDiv img {
+      animation: homePageStartDiv-img-float infinite 5s ease-in-out;
+    }
+}
+
+@keyframes homePageStartDiv-img-float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
