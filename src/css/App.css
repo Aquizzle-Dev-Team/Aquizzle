@@ -2,10 +2,11 @@
   text-align: center;
   display: grid;
   grid-template-columns: 160px auto;
-  grid-template-rows: 100px auto;
+  grid-template-rows: 100px auto ;
   grid-template-areas:
   "logo homePageButtons"
-  "startHomePage startHomePage";
+  "startHomePage startHomePage"
+  "quiz quiz";
 }
 .logo{
   grid-area: logo;
@@ -15,4 +16,7 @@
 }
 .startHomePage{
   grid-area: startHomePage;
+}
+.quiz{
+  grid-area: quiz;
 }

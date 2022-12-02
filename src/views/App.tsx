@@ -5,14 +5,16 @@ import '../css/App.css';
 
 const Logo = require('../presenters/logoPresenter.tsx').default;
 const HomePageButtons = require('../presenters/homePageButtonsPresenter').default;
-const HomePageStart = require('../presenters/homePageStartPresenter').default;
+const StartQuiz = require('../presenters/startQuizPresenter').default;
+const Quiz = require('../presenters/quizPresenter').default;
 
 function App() {
   return (
     <div className="App">
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
-      <HomePageStart class="startHomePage"/>
+      <StartQuiz class="startHomePage"/>
+      {<Quiz className="quiz"/>}
     </div>
   );
 }

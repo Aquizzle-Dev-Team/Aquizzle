@@ -1,14 +1,14 @@
 import logo from '../images/aquizzleLogo.png';
-import '../css/homePageStart.css';
+import '../css/startQuiz.css';
 
-function HomePageStartView(props: any){
+function StartQuizView(props: any){
     
     return(
-        <div className = "homePageStartDiv">
+        <div className = "startQuizDiv">
             <img src={logo} alt="Logo"/>
             <button>Start a game</button>
         </div>
     )
 }
 
-export default HomePageStartView;
+export default StartQuizView;

@@ -1,0 +1,40 @@
+.quizDiv{
+    text-align: center;
+    margin: auto;
+    grid-area: quiz;
+    margin-top: 100px;
+    display: grid;
+    width: 50%;
+    height: 100%;
+    grid-template-columns: 50% auto;
+    grid-template-rows: 50% auto ;
+    grid-template-areas:
+    "question question"
+    "answer1 answer2"
+    "answer3 answer4";
+}
+.question{
+    text-align: center;
+    grid-area: question;
+    color: white;
+}
+.answer1{
+    grid-area: answer1;
+    margin: 20px;
+    margin-top: 0px
+}
+.answer2{
+    grid-area: answer2;
+    margin: 20px;
+    margin-top: 0px
+}
+.answer3{
+    grid-area: answer3;
+    margin: 20px;
+    margin-top: 0px
+}
+.answer4{
+    grid-area: answer4;
+    margin: 20px;
+    margin-top: 0px
+}
