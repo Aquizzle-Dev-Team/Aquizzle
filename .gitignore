@@ -5,3 +5,7 @@ package-lock.json
 **/*solved*
 **/*Config.ts*
 !telemetry.config.json
+build
+.firebase
+firebase.json
+.firebaserc
