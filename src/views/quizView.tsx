@@ -1,17 +1,16 @@
 import '../css/quiz.css';
+import React, {useState} from 'react';
 
-interface QuizViewTypes{
-    countNumber: number
-}
+export default function QuizView(props: any){
 
-export default function QuizView({countNumber}: QuizViewTypes){
     return(
-        <div className="quizDiv">
-            <h1 className="question">Question: {countNumber}</h1>
-            <button className="answer1">Svar 1</button>
-            <button className="answer2">Svar 2</button>
-            <button className="answer3">Svar 3</button>
-            <button className="answer4">Svar 4</button>
-        </div>
+            <div className="quizDiv">
+                <h1 className="question">{props.question}</h1>
+                <button className="answer1">{props.answer1}</button>
+                <button className="answer2">{props.answer2}</button>
+                <button className="answer3">{props.answer3}</button>
+                <button className="answer4">{props.answer4}</button>
+                <button className="generateButton" onClick={props.handleAddQuestion}>Generate question</button>
+            </div>
     )
 }

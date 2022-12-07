@@ -11,7 +11,8 @@
     grid-template-areas:
     "question question"
     "answer1 answer2"
-    "answer3 answer4";
+    "answer3 answer4"
+    "button button";
 }
 .question{
     text-align: center;
@@ -21,20 +22,33 @@
 .answer1{
     grid-area: answer1;
     margin: 20px;
-    margin-top: 0px
+    margin-top: 0px;
+    
 }
 .answer2{
     grid-area: answer2;
     margin: 20px;
-    margin-top: 0px
+    margin-top: 0px;
 }
 .answer3{
     grid-area: answer3;
     margin: 20px;
-    margin-top: 0px
+    margin-top: 0px;
 }
 .answer4{
     grid-area: answer4;
     margin: 20px;
-    margin-top: 0px
+    margin-top: 0px;
+}
+
+.generateButton {
+    grid-area: button;
+    margin: auto;
+    
+}
+
+.generateButtonContainer {
+    grid-area: button;
+    text-align: center;
+    
 }

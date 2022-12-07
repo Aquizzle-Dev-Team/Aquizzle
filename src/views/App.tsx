@@ -11,8 +11,6 @@ const Quiz = require('../presenters/quizPresenter').default;
 
 function App() {
 
-  const counter = useSelector((state: RootState) => state.counter.value)
-
   return (
     <div className="App">
       <Logo className="logo"/>
