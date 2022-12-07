@@ -8,7 +8,8 @@ What we plan to do in the future is create the backend functionality using redux
 This includes being able to change the hash state and make custom events that changes 
 questions and answers. We also want to make a leaderboard and being able to choose another type of quiz.
 
-Our project file structure is made up of views, presenters, states and reducers. We have a store were we store all the data and reducers that changes the state of that data. Views shows all the components in the UI, presenters communicates with the view and also dispatches an action
+Our project file structure is made up of views, presenters, states and reducers. We have a store were we store all the data and reducers that changes the state of 
+that data. Views shows all the components in the UI, presenters communicates with the view and also dispatches an action
 to the reducer and gets updated in the store.
 
 
