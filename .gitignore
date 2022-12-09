@@ -9,3 +9,4 @@ build
 .firebase
 firebase.json
 .firebaserc
+database.rules.json
