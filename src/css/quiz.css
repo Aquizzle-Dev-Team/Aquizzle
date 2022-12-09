@@ -6,13 +6,15 @@
     display: grid;
     width: 50%;
     height: 100%;
-    grid-template-columns: 50% auto;
-    grid-template-rows: 50% auto ;
+    grid-template-columns: auto;
+    grid-template-rows: auto ;
     grid-template-areas:
-    "question question"
-    "answer1 answer2"
-    "answer3 answer4"
-    "button button";
+    "question"
+    "answer1"
+    "answer2"
+    "answer3"
+    "answer4"
+    "button";
 }
 .question{
     text-align: center;
@@ -23,32 +25,49 @@
     grid-area: answer1;
     margin: 20px;
     margin-top: 0px;
-    
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .answer2{
     grid-area: answer2;
     margin: 20px;
     margin-top: 0px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .answer3{
     grid-area: answer3;
     margin: 20px;
     margin-top: 0px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 .answer4{
     grid-area: answer4;
     margin: 20px;
     margin-top: 0px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .generateButton {
     grid-area: button;
     margin: auto;
-    
 }
 
 .generateButtonContainer {
     grid-area: button;
     text-align: center;
     
+}
+.hideButton{
+    display: none;
+}
+.quizDiv button:hover{
+    color: white;
+    background-color: rgb(32, 32, 32);
 }

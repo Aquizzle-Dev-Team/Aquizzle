@@ -29,7 +29,6 @@ function Quiz(){
             setAnswer2(result[0].answers.answer_b);
             setAnswer3(result[0].answers.answer_c);
             setAnswer4(result[0].answers.answer_d);
-            console.log(result[0]);
             
         })      
         dispatch(addQuestion(question));
