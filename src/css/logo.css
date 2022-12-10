@@ -3,6 +3,8 @@
     margin-bottom: 10px;
     background-color: #30303000;
     grid-area: logo;
+    border-bottom: solid;
+    background-color:#313541;
 }
 .logoDiv img{
     height: 88%;

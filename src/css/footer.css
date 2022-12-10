@@ -1,0 +1,22 @@
+.footerDiv{
+    background-color:#313541;
+    border-top: solid black;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 33% auto 33%;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "kontaktaOss besökOss stödjaStudenter";
+    color: rgb(177, 177, 177);
+}
+.kontaktaOss{
+    grid-area: kontaktaOss;
+}
+.besökOss{
+    grid-area: besökOss;
+}
+.stödjaStudenter{
+    grid-area: stödjaStudenter;
+}
+
+.footerDiv p{}

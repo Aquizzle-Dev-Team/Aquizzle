@@ -8,6 +8,7 @@ const Logo = require('../presenters/logoPresenter.tsx').default;
 const HomePageButtons = require('../presenters/homePageButtonsPresenter').default;
 const StartQuiz = require('../presenters/startQuizPresenter').default;
 const Quiz = require('../presenters/quizPresenter').default;
+const Footer = require('../presenters/footerPresenter').default;
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
       <StartQuiz class="startHomePage"/>
-      {<Quiz className="quiz"/>}
+      <Quiz className="quiz"/>
+      {<Footer className="footer"/>}
     </div>
   );
 }

@@ -8,6 +8,8 @@
     "history leaderboard aboutUs something";
     background-color: #30303000;
     grid-area: homePageButtons;
+    border-bottom: solid;
+    background-color:#313541;
 }
 .Div button{
     margin: 20px;   
