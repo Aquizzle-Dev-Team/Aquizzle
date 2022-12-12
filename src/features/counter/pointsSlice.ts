@@ -14,8 +14,8 @@ export const pointsSlice = createSlice ({
     decrement: (state) => {
       state.value-=1;
     },
-    initialPointsValue: (state) => {
-      state.value+=2;
+    initialPointsValue: (state, action) => {
+      state.value = action.payload;
     }
   },
 });

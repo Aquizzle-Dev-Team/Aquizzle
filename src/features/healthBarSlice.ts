@@ -14,8 +14,8 @@ export const healthBarSlice = createSlice ({
     decrementHealthBar: (state) => {
       state.value-=1;
     },
-    initialHealthBarValue: (state) => {
-      state.value-=1;
+    initialHealthBarValue: (state, action) => {
+      state.value = action.payload;
     }
   },
 });

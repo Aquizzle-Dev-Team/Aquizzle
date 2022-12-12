@@ -1,6 +1,6 @@
 import { RootState } from '../app/store';
 import QuizView from '../views/quizView';
-import React, {useState} from 'react';
+import {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { addQuestions } from '../features/questionSlice';
 import {getQuestions} from '../quizSource'
@@ -34,8 +34,8 @@ function Quiz(){
             setAnswer4(result[0].answers.answer_d);
             dispatch(addQuestions(result));
         }) 
-        dispatch(initialPointsValue())
-        dispatch(initialHealthBarValue())
+        dispatch(initialPointsValue(0))
+        dispatch(initialHealthBarValue(3))
     }
 
     const updateQuestionsOnClick = () =>{
