@@ -7,20 +7,30 @@
   "logo homePageButtons"
   "startHomePage startHomePage"
   "quiz quiz"
+  "quizSelector quizSelector"
   "footer footer";
 }
+
 .logo{
   grid-area: logo;
 }
+
 .homePageButtons{
   grid-area: homePageButtons;
 }
+
 .startHomePage{
   grid-area: startHomePage;
 }
+
 .quiz{
   grid-area: quiz;
 }
+
 .footer{
   grid-area: footer;
+}
+
+.quizSelector {
+  grid-area: quizSelector;
 }

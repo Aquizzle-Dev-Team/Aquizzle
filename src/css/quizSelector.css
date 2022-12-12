@@ -1,0 +1,25 @@
+.quizSelectorContainer {
+    margin: auto;
+    background-color: white;
+    color: black;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    border: solid white 2px;
+    
+}
+
+.selectorCards {
+    border: solid black 2px;
+    width: 150px;
+    height: 175px;
+    margin: 20px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.cardText {
+    color: red;
+}
