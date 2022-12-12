@@ -1,14 +1,14 @@
 import { configureStore} from '@reduxjs/toolkit';
 import questionsReducer from "../features/questionSlice"
 import pointsReducer from "../features/counter/pointsSlice"
-import livesReducer from "../features/livesSlice"
+import healthBarReducer from "../features/healthBarSlice"
 
 
 export const store = configureStore({
   reducer: {
     questions: questionsReducer,
     points: pointsReducer,
-    lives: livesReducer,
+    healthBar: healthBarReducer,
   },
 })
 

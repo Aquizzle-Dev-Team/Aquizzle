@@ -1,24 +1,24 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 interface questionState {
-    value: string[]
+    value: any[];
 }
 
 const initialState: questionState =  {
-    value: ['hej']
-}
+    value: [],
+};
 
 export const questionSlice = createSlice({
     name: "questions",
     initialState,
     reducers: {
-        addQuestion: (state, action: PayloadAction<string>) => {
-            state.value.push(action.payload)
+        addQuestions: (state, action: PayloadAction<any[]>) => {
+            state.value.push(...action.payload)
         }
     }
     
 })
 
-export const { addQuestion } = questionSlice.actions
+export const { addQuestions } = questionSlice.actions
 
 export default questionSlice.reducer;

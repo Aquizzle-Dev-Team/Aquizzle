@@ -13,11 +13,14 @@ export const pointsSlice = createSlice ({
     },
     decrement: (state) => {
       state.value-=1;
+    },
+    initialPointsValue: (state) => {
+      state.value+=2;
     }
   },
 });
 
-export const { increment, decrement } = pointsSlice.actions;
+export const { increment, decrement, initialPointsValue } = pointsSlice.actions;
 
 export default pointsSlice.reducer;
 
