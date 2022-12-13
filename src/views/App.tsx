@@ -11,8 +11,13 @@ const Quiz = require('../presenters/quizPresenter').default;
 const Footer = require('../presenters/footerPresenter').default;
 const QuizSelector = require('../presenters/quizSelectorPresenter').default;
 const Leaderboard = require('../presenters/leaderboardPresenter').default;
+const Show=require("../presenters/show.tsx").default;
+const AboutUs=require("../presenters/aboutUsPresenter.tsx").default;
 
 function App() {
+  if((window.location.hash === "") ){
+    window.location.hash = "#homepage"
+  }
 
   return (
     <div className="App">
@@ -20,10 +25,14 @@ function App() {
       <HomePageButtons className="homePageButtons"/>
 
       <Leaderboard className="leaderboard"/>
-      {/*<QuizSelector className="quizSelector"/>*/}
+      
+      <Show hash = "#quizselector"><QuizSelector className="quizSelector"/></Show>
 
-      {/*<StartQuiz class="startHomePage"/>*/}
-      {/*<Quiz className="quiz"/>*/}
+      <Show hash = "#homepage"><StartQuiz class="startHomePage"/></Show>
+    
+      <Show hash = "#aboutus"><AboutUs className="aboutUs"/></Show>
+
+      <Show hash = "#quiz"><Quiz className="quiz"/></Show>
       {<Footer className="footer"/>}
     </div>
   );
