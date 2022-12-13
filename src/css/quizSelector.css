@@ -1,7 +1,8 @@
 .quizSelectorContainer {
     margin: auto;
-    background-color: white;
+    background-color: #313541;
     color: black;
+    grid-area: quizSelector;
     display: grid;
     grid-template-columns: repeat(4, 25%);
     border: solid white 2px;
@@ -9,7 +10,8 @@
 }
 
 .selectorCards {
-    border: solid black 2px;
+    background-color: white;
+    border: solid goldenrod 2px;
     width: 150px;
     height: 175px;
     margin: 20px;
@@ -21,5 +23,23 @@
 }
 
 .cardText {
-    color: red;
+    color: black;
+}
+
+.jsCard {
+    background-image: url(../images/js.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.htmlCard {
+    background-image: url(../images/html.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.sqlCard {
+    background-image: url(../images/hdd.jpg);
+    background-size: cover;
+    background-position: center;
 }
