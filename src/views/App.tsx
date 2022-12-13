@@ -9,6 +9,7 @@ const HomePageButtons = require('../presenters/homePageButtonsPresenter').defaul
 const StartQuiz = require('../presenters/startQuizPresenter').default;
 const Quiz = require('../presenters/quizPresenter').default;
 const Footer = require('../presenters/footerPresenter').default;
+const QuizSelector = require('../presenters/quizSelectorPresenter').default;
 
 function App() {
 
@@ -16,6 +17,9 @@ function App() {
     <div className="App">
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
+
+      <QuizSelector className="quizSelector"/>
+
       <StartQuiz class="startHomePage"/>
       <Quiz className="quiz"/>
       {<Footer className="footer"/>}
@@ -24,3 +28,16 @@ function App() {
 }
 
 export default App;
+
+/*return (
+  <div className="App">
+    <Logo className="logo"/>
+    <HomePageButtons className="homePageButtons"/>
+
+    <QuizSelector className="quizSelector"/>
+
+    <StartQuiz class="startHomePage"/>
+    <Quiz className="quiz"/>
+    {<Footer className="footer"/>}
+  </div>
+);*/

@@ -1,0 +1,45 @@
+.quizSelectorContainer {
+    margin: auto;
+    background-color: #313541;
+    color: black;
+    grid-area: quizSelector;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    border: solid white 2px;
+    
+}
+
+.selectorCards {
+    background-color: white;
+    border: solid goldenrod 2px;
+    width: 150px;
+    height: 175px;
+    margin: 20px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+}
+
+.cardText {
+    color: black;
+}
+
+.jsCard {
+    background-image: url(../images/js.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.htmlCard {
+    background-image: url(../images/html.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.sqlCard {
+    background-image: url(../images/hdd.jpg);
+    background-size: cover;
+    background-position: center;
+}

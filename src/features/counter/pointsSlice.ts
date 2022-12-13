@@ -1,25 +1,28 @@
 import { createSlice, PayloadAction} from "@reduxjs/toolkit" 
 
 const initialState = {
-  value: 72
+  value: 0
 }
 
-export const counterSlice = createSlice ({
-  name: 'counter',
+export const pointsSlice = createSlice ({
+  name: 'points',
   initialState,
   reducers: {
     increment: (state) => {
-      state.value++;
+      state.value +=1;
     },
     decrement: (state) => {
-      state.value--;
+      state.value-=1;
+    },
+    initialPointsValue: (state, action) => {
+      state.value = action.payload;
     }
   },
 });
 
-export const { increment, decrement } = counterSlice.actions;
+export const { increment, decrement, initialPointsValue } = pointsSlice.actions;
 
-export default counterSlice.reducer;
+export default pointsSlice.reducer;
 
 // import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 // import { RootState, AppThunk } from '../../app/store';

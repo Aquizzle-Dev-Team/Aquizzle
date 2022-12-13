@@ -6,22 +6,32 @@
   grid-template-areas:
   "logo homePageButtons"
   "startHomePage startHomePage"
+  "quizSelector quizSelector"
   "quiz quiz"
   "footer footer";
   height: 100vh;
 }
+
 .logo{
   grid-area: logo;
 }
+
 .homePageButtons{
   grid-area: homePageButtons;
 }
+
 .startHomePage{
   grid-area: startHomePage;
 }
+
 .quiz{
   grid-area: quiz;
 }
+
 .footer{
   grid-area: footer;
+}
+
+.quizSelector {
+  grid-area: quizSelector;
 }
