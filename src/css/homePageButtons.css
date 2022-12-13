@@ -14,12 +14,13 @@
 .Div button{
     margin: 20px;   
     border-radius: 100px;
+    background-color: rgb(32, 32, 32);
+    color: white;
 }
 .Div button:hover{
-    background-image: url(../images/kermit.jpg);
     background-size: cover;
     background-position-y: -20px;
-    font-size: 20px;
+    font-size: 15px;
 }
 .history{
     grid-area: history;

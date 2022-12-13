@@ -55,14 +55,9 @@ function Quiz(){
         let randomAnswer = [A, B, C, D]
 
         let currIndex = randomAnswer.length, randIndex;
-        // While there remain elements to shuffle.
         while (currIndex != 0) {
-        
-            // Pick a remaining element.
             randIndex = Math.floor(Math.random() * currIndex);
             currIndex--;
-        
-            // And swap it with the current element.
             [randomAnswer[currIndex], randomAnswer[randIndex]] = [
             randomAnswer[randIndex], randomAnswer[currIndex]];
         }
