@@ -8,6 +8,7 @@
   "startHomePage startHomePage"
   "quiz quiz"
   "footer footer";
+  height: 100vh;
 }
 .logo{
   grid-area: logo;

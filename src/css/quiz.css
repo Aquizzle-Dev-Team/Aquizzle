@@ -34,6 +34,8 @@
     height: 80%;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(32, 32, 32);
+    color: white;
 }
 .answer2{
     grid-area: answer2;
@@ -43,6 +45,8 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(32, 32, 32);
+    color: white;
 }
 .answer3{
     grid-area: answer3;
@@ -52,6 +56,8 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(32, 32, 32);
+    color: white;
 }
 .answer4{
     grid-area: answer4;
@@ -61,11 +67,14 @@
     width: 50%;
     margin-left: auto;
     margin-right: auto;
+    background-color: rgb(32, 32, 32);
+    color: white;
 }
 
 .generateButton {
     grid-area: button;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .generateButtonContainer {
@@ -77,6 +86,5 @@
     display: none;
 }
 .quizDiv button:hover{
-    color: white;
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(54, 54, 54);
 }
