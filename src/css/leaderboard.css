@@ -1,0 +1,13 @@
+.leaderboardDiv{
+    border: solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    grid-area: leaderboard;
+}
+.leaderboardDiv h2{
+    color: white;
+}
+.leaderboardDiv p{
+    color: lightgrey;
+}
