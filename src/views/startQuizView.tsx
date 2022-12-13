@@ -3,10 +3,14 @@ import '../css/startQuiz.css';
 
 function StartQuizView(props: any){
     
+    function navigationACB(){
+        window.location.hash="#quizselector"
+    }
+
     return(
         <div className = "startQuizDiv">
             <img src={logo} alt="Logo"/>
-            <button>Start a game</button>
+            <button onClick = {navigationACB} >Start a game</button>
         </div>
     )
 }

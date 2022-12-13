@@ -5,7 +5,7 @@ function LogoView(props: any){
     
     return(
         <div className = "logoDiv">
-            <a href=''>
+            <a href='#homepage'>
                 <img src={logo} alt="Logo"/>
             </a>
         </div>

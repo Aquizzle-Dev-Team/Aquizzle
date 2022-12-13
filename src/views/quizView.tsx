@@ -5,6 +5,10 @@ import React, {useState} from 'react';
 
 export default function QuizView(props: any){
 
+    function navigationACB(){
+        window.location.hash="#homepage"
+    }
+
     return(
             <div className="quizDiv">
                 <h1 className="question">{props.question}</h1>
@@ -15,6 +19,7 @@ export default function QuizView(props: any){
                 <button className="generateButton" onClick={props.onAddQuestions}>Generate question</button>
                 <h1 className = "counter"> points {props.points}</h1>
                 <h1 className = "lives">lives {props.healthBar}</h1>
+                <button onClick = {navigationACB}>Cancel Quiz</button>
             </div>
     )
 }
