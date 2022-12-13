@@ -21,7 +21,7 @@ function Quiz(){
     const points = useSelector((state: RootState) => state.points.value)
     const healthBar = useSelector((state: RootState) => state.healthBar.value)
     const allQuestions = useSelector((state: RootState) => state.questions.value)
-
+    
 
     const dispatch = useDispatch();
 
