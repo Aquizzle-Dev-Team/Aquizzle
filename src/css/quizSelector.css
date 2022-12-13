@@ -11,11 +11,11 @@
 
 .selectorCards {
     background-color: white;
-    border: solid goldenrod 2px;
+    border: solid rgba(255, 165, 0, 1) 2px;
     width: 150px;
     height: 175px;
     margin: 20px;
-    vertical-align: middle;
+    vertical-align: bottom;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -23,8 +23,23 @@
 }
 
 .cardText {
-    color: black;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 3px;
+    border-radius: 4px;
+    display: none;
 }
+
+.selectorCards:hover .cardText{
+
+    display: inline;
+    
+}
+.selectorCards:hover {
+    background-color: darkgrey;
+}
+
 
 .jsCard {
     background-image: url(../images/js.png);
@@ -34,12 +49,46 @@
 
 .htmlCard {
     background-image: url(../images/html.png);
-    background-size: cover;
+    background-size: contain;
     background-position: center;
 }
 
 .sqlCard {
-    background-image: url(../images/hdd.jpg);
+    background-image: url(../images/sql.png);
     background-size: cover;
+    background-position: center;
+}
+
+.dockerCard {
+    background-image: url(../images/docker.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.phpCard {
+    background-image: url(../images/php.png);
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.linuxCard {
+    background-image: url(../images/tux.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bashCard {
+    background-image: url(../images/bash.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.kuberCard {
+    background-image: url(../images/kuber.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
     background-position: center;
 }

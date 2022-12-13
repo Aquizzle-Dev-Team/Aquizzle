@@ -12,12 +12,13 @@
     grid-template-columns: auto;
     grid-template-rows: auto ;
     grid-template-areas:
-    "question"
-    "answer1"
-    "answer2"
-    "answer3"
-    "answer4"
-    "button";
+    "question question"
+    "counter lives"
+    "answer1 answer1"
+    "answer2 answer2"
+    "answer3 answer3"
+    "answer4 answer4"
+    "button button";
 }
 .question{
     text-align: center;
@@ -82,9 +83,28 @@
     text-align: center;
     
 }
-.hideButton{
-    display: none;
-}
 .quizDiv button:hover{
     background-color: rgb(54, 54, 54);
+}
+
+.counter{
+    grid-area: counter;
+    font-size: 25px;
+    -webkit-text-stroke: 1px green;
+    margin-top: 0px;
+}
+
+.lives{
+    grid-area: lives;
+    font-size: 25px;
+    -webkit-text-stroke: 0.5px red;
+    margin-top: 0px;
+}
+
+.lives img{
+    width: 20px;
+}
+
+.hide{
+    display: none;
 }

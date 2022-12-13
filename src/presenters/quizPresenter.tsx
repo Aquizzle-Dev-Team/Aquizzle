@@ -21,12 +21,13 @@ function Quiz(){
     const points = useSelector((state: RootState) => state.points.value)
     const healthBar = useSelector((state: RootState) => state.healthBar.value)
     const allQuestions = useSelector((state: RootState) => state.questions.value)
+    const chosenQuiz = useSelector((state: RootState) => state.selectedQuiz.value);
 
 
     const dispatch = useDispatch();
 
     const handleAddQuestions = () => {  
-        getQuestions({"tags": "javascript"}).then((result) => {
+        getQuestions({"tags": chosenQuiz}).then((result) => {
             setQuestion(result[0].question);
             setAnswer1(result[0].answers.answer_a);
             setAnswer2(result[0].answers.answer_b);
@@ -54,14 +55,9 @@ function Quiz(){
         let randomAnswer = [A, B, C, D]
 
         let currIndex = randomAnswer.length, randIndex;
-        // While there remain elements to shuffle.
         while (currIndex != 0) {
-        
-            // Pick a remaining element.
             randIndex = Math.floor(Math.random() * currIndex);
             currIndex--;
-        
-            // And swap it with the current element.
             [randomAnswer[currIndex], randomAnswer[randIndex]] = [
             randomAnswer[randIndex], randomAnswer[currIndex]];
         }
@@ -82,7 +78,7 @@ function Quiz(){
         dispatch(decrementHealthBar())
     }    
 
-    const clickedOnAnswerHandler = (e: { target: { innerText: string; }; }) =>{
+    const clickedOnAnswerHandler = (e: any) =>{
 
         if(e.target.innerText === allQuestions[index-1].answers.answer_a){
             clickedOnRightAnswerHandler();
@@ -92,14 +88,16 @@ function Quiz(){
     }
 
     return(
-        <QuizView question={question}   
-        onAddQuestions={handleAddQuestions}
-        onClickAnswer = {clickedOnAnswerHandler}
-        points = {points}
-        healthBar = {healthBar}
-        answer1 = {answer1}
-        answer2 = {answer2}
-        answer3 = {answer3}
-        answer4 = {answer4}/>
+        <QuizView 
+            question={question}   
+            onAddQuestions={handleAddQuestions}
+            onClickAnswer = {clickedOnAnswerHandler}
+            points = {points}
+            healthBar = {healthBar}
+            answer1 = {answer1}
+            answer2 = {answer2}
+            answer3 = {answer3}
+            answer4 = {answer4}
+        />
     )
 }
