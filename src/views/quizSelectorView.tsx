@@ -3,13 +3,13 @@ import "../css/quizSelector.css";
 function QuizSelectorView() {
     return(
         <div className="quizSelectorContainer">
-            <div className="selectorCards">
+            <div className="selectorCards jsCard">
                 <span className="cardText">JavaScript</span>
             </div>
-            <div className="selectorCards">
+            <div className="selectorCards htmlCard">
                 <span className="cardText">HTML</span>
             </div>
-            <div className="selectorCards">
+            <div className="selectorCards sqlCard">
                 <span className="cardText">MySQL</span>
             </div>
             <div className="selectorCards">
