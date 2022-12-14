@@ -2,11 +2,6 @@ import logo from '../images/aquizzleLogo.png';
 import '../css/startQuiz.css';
 
 function AboutUsView(props: any){
-    
-    function navigationACB(){
-        window.location.hash="#homepage"
-    }
-
     return(
         <div className = "startQuizDiv">
             <img src={logo} alt="Logo"/>
@@ -18,7 +13,7 @@ What we have done is deployed the React app to firebase, we setup the code to fe
 What we plan to do in the future is to fully implement redux for the backend functionality of the website. This includes being able to change the hash state and make custom events that changes questions and answers. We also plan on making a leaderboard and being able to choose the type and difficuly of the quiz.
 
 Our project file structure is made up of views, presenters, states and reducers. We have a store and slices (redux terminology) were we store all the data and reducers that changes the state of that data. Views shows all the components in the UI, presenters communicates with the view and also dispatches an action to the reducer and gets updated in the store.</div>
-            <button onClick = {navigationACB}>back to homepage</button>
+            <button onClick = {() => {window.location.hash="#homepage";}}>back to homepage</button>
         </div>
     )
 }
