@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
-    value: "sql"
+    value: ""
 }
 
 export const quizSelectorSlice = createSlice({
