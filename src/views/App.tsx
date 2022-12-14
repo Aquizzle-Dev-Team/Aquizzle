@@ -10,6 +10,7 @@ const StartQuiz = require('../presenters/startQuizPresenter').default;
 const Quiz = require('../presenters/quizPresenter').default;
 const Footer = require('../presenters/footerPresenter').default;
 const QuizSelector = require('../presenters/quizSelectorPresenter').default;
+const Leaderboard = require('../presenters/leaderboardPresenter').default;
 const Show=require("../presenters/show.tsx").default;
 const AboutUs=require("../presenters/aboutUsPresenter.tsx").default;
 
@@ -23,6 +24,8 @@ function App() {
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
 
+      <Leaderboard className="leaderboard"/>
+      
       <Show hash = "#quizselector"><QuizSelector className="quizSelector"/></Show>
 
       <Show hash = "#homepage"><StartQuiz class="startHomePage"/></Show>
@@ -36,16 +39,3 @@ function App() {
 }
 
 export default App;
-
-/*return (
-  <div className="App">
-    <Logo className="logo"/>
-    <HomePageButtons className="homePageButtons"/>
-
-    <QuizSelector className="quizSelector"/>
-
-    <StartQuiz class="startHomePage"/>
-    <Quiz className="quiz"/>
-    {<Footer className="footer"/>}
-  </div>
-);*/

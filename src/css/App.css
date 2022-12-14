@@ -5,6 +5,7 @@
   grid-template-rows: 100px auto;
   grid-template-areas:
   "logo homePageButtons"
+  "leaderboard leaderboard"
   "startHomePage startHomePage"
   "quizSelector quizSelector"
   "show show"
@@ -35,4 +36,8 @@
 
 .quizSelector {
   grid-area: quizSelector;
+}
+
+.leaderboard{
+  grid-area: leaderboard;
 }

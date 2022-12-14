@@ -18,3 +18,11 @@
 .stödjaStudenter{
     grid-area: stödjaStudenter;
 }
+
+.footerDiv a{
+    color: rgb(177, 177, 177);
+}
+
+.footerDiv h3{
+    color: white;
+}

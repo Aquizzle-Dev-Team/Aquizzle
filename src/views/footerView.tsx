@@ -7,9 +7,8 @@ function FooterView(){
             {/*<div className="slutetlogo"></div>*/}
         
             <div className="kontaktaOss">
-                <h3>Kontakta oss</h3>
-                <p>Gmail: andree3@kth.se</p>
-                <p>Telefon: 072-324 28 22</p>
+                <h3>Skulle du vilja se projektet i GitHub?</h3>
+                <a href="https://github.com/Aquizzle-Dev-Team/Aquizzle" target="_blank"> Tryck här för att komma till projektet </a>
             </div>
         
             <div className="besökOss">
