@@ -11,3 +11,18 @@
 .leaderboardDiv p{
     color: lightgrey;
 }
+
+.leaderboardDiv button{
+    margin: 20px;   
+    border-radius: 100px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    padding: 15px;
+}
+.leaderboardDiv button:hover {
+    color: gray;
+}
+.leaderboardDiv button:active {
+    transform: scale(0.98);
+}

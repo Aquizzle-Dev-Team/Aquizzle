@@ -24,7 +24,7 @@ function App() {
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
 
-      <Leaderboard className="leaderboard"/>
+      <Show hash = "#leaderboard"><Leaderboard className="leaderboard"/></Show>
       
       <Show hash = "#quizselector"><QuizSelector className="quizSelector"/></Show>
 
