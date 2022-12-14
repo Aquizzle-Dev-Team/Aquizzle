@@ -10,6 +10,7 @@ function QuizSelector(){
 
     const quizPicker = (e: any) => {
         dispatch(changeCurrentQuiz(e.target.innerText.toLowerCase()));
+        window.location.hash = "#quiz"
     }
     
     return(

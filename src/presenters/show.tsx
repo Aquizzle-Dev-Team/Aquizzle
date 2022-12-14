@@ -14,6 +14,6 @@ function Show(props: any) {
         }
         React.useEffect( componentWasCreatedACB, [] );
     return (
-    <div className = {(hashState === props.hash) ? "" : 'hide'}>{props.children}</div>
+    <div className = {(hashState === props.hash) ? "showDiv" : 'hide'}>{props.children}</div>
     );
 }

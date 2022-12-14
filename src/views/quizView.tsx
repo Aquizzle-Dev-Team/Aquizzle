@@ -3,10 +3,6 @@ import React, {useState} from 'react';
 
 export default function QuizView(props: any){
 
-    function navigationACB(){
-        window.location.hash="#homepage"
-    }
-
     return(
             <div className="quizDiv">
                 <h1 className="question">{props.question}</h1>
@@ -17,7 +13,7 @@ export default function QuizView(props: any){
                 <button className="generateButton" onClick={props.onAddQuestions}>Generate question</button>
                 <h2 className = "counter"> Points {props.points}</h2>
                 <h2 className = "lives"><img className={(props.healthBar > 2)? "" : "hide"} src="https://www.freeiconspng.com/thumbs/heart-icon/heart-icon-valentine-2.png"/><img className={(props.healthBar > 1)? "" : "hide"}src="https://www.freeiconspng.com/thumbs/heart-icon/heart-icon-valentine-2.png"/><img className={(props.healthBar > 0)? "" : "hide"}src="https://www.freeiconspng.com/thumbs/heart-icon/heart-icon-valentine-2.png"/></h2>
-                <button onClick = {navigationACB}>Cancel Quiz</button>
+                <button onClick = {() => {window.location.hash="#quizselector";}}>Cancel Quiz</button>
             </div>
     )
 }

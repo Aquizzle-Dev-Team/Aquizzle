@@ -1,3 +1,7 @@
+.showDiv {
+    grid-area: show;
+}
+
 .hide{
     display: none;
 }
