@@ -59,6 +59,9 @@ function Quiz(){
     }    
 
     const clickedOnWrongAnswerHandler = () =>{
+        if(healthBar === 1)
+            window.location.hash = "#homepage"
+            
         updateQuestionsOnClick();
         dispatch(decrementHealthBar())
     }    
