@@ -4,8 +4,6 @@ import {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { increment, initialPointsValue} from '../features/counter/pointsSlice';
 import { decrementHealthBar, initialHealthBarValue} from '../features/healthBarSlice';
-import promiseNoData from "../views/promiseNoData";
-import resolvePromise from '../resolvePromise';
 import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } from '../features/quizQuestionAnswerSlice';
 import { resetQuestionsState } from '../features/questionSlice';
 
@@ -20,9 +18,9 @@ function Quiz(){
     const answerD = useSelector((state: RootState) => state.QnA.answerD)
 
     const [index, setindex] = useState(1);
-    //const [promiseState] = useState({});
-    //const [, reRender] = useState();
-    
+
+    const promiseState = useSelector((state: RootState) => state.promiseState.value)
+
     const points = useSelector((state: RootState) => state.points.value)
     const healthBar = useSelector((state: RootState) => state.healthBar.value)
     const allQuestions = useSelector((state: RootState) => state.questions.value)
@@ -89,25 +87,19 @@ function Quiz(){
             clickedOnWrongAnswerHandler();
         }
     }
-    /*function notifyACB(){
-        this.forceUpdate();
-    }*/
 
-    /*if(!promiseState.promise) {
-        resolvePromise(promise, promiseState, notifyACB);
-    }*/
-
-
-    return(/*promiseNoData(promiseState)
-    ||*/  <QuizView 
-            question={question}   
-            onClickAnswer = {clickedOnAnswerHandler}
-            points = {points}
-            healthBar = {healthBar}
-            answer1 = {answerA}
-            answer2 = {answerB}
-            answer3 = {answerC}
-            answer4 = {answerD}
-        />
+    return(
+    <div>{promiseState ?
+    <img width = "10%" src="https://i.gifer.com/XOsX.gif"/>
+            : <QuizView 
+        question={question}   
+        onClickAnswer = {clickedOnAnswerHandler}
+        points = {points}
+        healthBar = {healthBar}
+        answer1 = {answerA}
+        answer2 = {answerB}
+        answer3 = {answerC}
+        answer4 = {answerD} /> }
+    </div>
     )
 }

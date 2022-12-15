@@ -5,6 +5,7 @@ import healthBarReducer from "../features/healthBarSlice"
 import quizSelectorReducer from '../features/quizSelectorSlice';
 import quizQuestionAnswerReducer from '../features/quizQuestionAnswerSlice';
 import timeStampReducer from '../features/timeStampSlice'
+import promiseStateReducer from '../features/promiseStateSlice';
 
 export const store = configureStore({
   reducer: {
@@ -13,7 +14,8 @@ export const store = configureStore({
     healthBar: healthBarReducer,
     selectedQuiz: quizSelectorReducer,
     QnA: quizQuestionAnswerReducer,
-    timeStamp: timeStampReducer
+    timeStamp: timeStampReducer,
+    promiseState: promiseStateReducer
   },
 })
 

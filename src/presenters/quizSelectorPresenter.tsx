@@ -9,6 +9,7 @@ import {initialPointsValue } from '../features/counter/pointsSlice';
 import {initialHealthBarValue} from '../features/healthBarSlice';
 import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } from '../features/quizQuestionAnswerSlice';
 import { changeTimeStamp } from '../features/timeStampSlice';
+import { addPromiseState } from '../features/promiseStateSlice';
 
 export default
 function QuizSelector(){
@@ -18,10 +19,12 @@ function QuizSelector(){
     const dispatch = useDispatch();
 
     useEffect(() => {
+        dispatch(addPromiseState(true));
         getQuestions({"tags": chosenQuiz}).then((result) => {
+            dispatch(addPromiseState(false));
             dispatch(resetQuestionsState())
             dispatch(addQuestions(result));
-        
+
             dispatch(setQuestion(result[0].question))
             dispatch(setAnswerA(result[0].answers.answer_a));
             dispatch(setAnswerB(result[0].answers.answer_b));
