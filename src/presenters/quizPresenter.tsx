@@ -64,7 +64,6 @@ function Quiz(){
     }    
 
     const clickedOnWrongAnswerHandler = () =>{
-<<<<<<< HEAD
         if(healthBar === 1){
             window.location.hash = "#death"
 
@@ -75,19 +74,11 @@ function Quiz(){
             dispatch(setAnswerB(""));
             dispatch(setAnswerC(""));
             dispatch(setAnswerD(""));
-            dispatch(initialPointsValue(0))
             dispatch(initialHealthBarValue(0))
         } else{   
             updateQuestionsOnClick();
             dispatch(decrementHealthBar())
         }
-=======
-        if(healthBar === 1)
-            window.location.hash = "#death"
-            
-        updateQuestionsOnClick();
-        dispatch(decrementHealthBar())
->>>>>>> e38c804dba2a4575fb303ee56b4590d10467ecf3
     }    
 
     const clickedOnAnswerHandler = (e: any) =>{
@@ -98,12 +89,9 @@ function Quiz(){
             clickedOnWrongAnswerHandler();
         }
     }
-<<<<<<< HEAD
-=======
     /*function notifyACB(){
         this.forceUpdate();
     }*/
->>>>>>> e38c804dba2a4575fb303ee56b4590d10467ecf3
 
     /*if(!promiseState.promise) {
         resolvePromise(promise, promiseState, notifyACB);
