@@ -13,6 +13,7 @@ const QuizSelector = require('../presenters/quizSelectorPresenter').default;
 const Leaderboard = require('../presenters/leaderboardPresenter').default;
 const Show=require("../presenters/show.tsx").default;
 const AboutUs=require("../presenters/aboutUsPresenter.tsx").default;
+const Death=require("../presenters/deathPresenter.tsx").default;
 
 function App() {
   if((window.location.hash === "") ){
@@ -23,6 +24,8 @@ function App() {
     <div className="App">
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
+
+      <Show hash = "#death"><Death/></Show>
 
       <Show hash = "#leaderboard"><Leaderboard className="leaderboard"/></Show>
       

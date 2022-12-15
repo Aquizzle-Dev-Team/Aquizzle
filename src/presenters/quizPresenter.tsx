@@ -64,7 +64,7 @@ function Quiz(){
 
     const clickedOnWrongAnswerHandler = () =>{
         if(healthBar === 1)
-            window.location.hash = "#homepage"
+            window.location.hash = "#death"
             
         updateQuestionsOnClick();
         dispatch(decrementHealthBar())
@@ -78,13 +78,14 @@ function Quiz(){
             clickedOnWrongAnswerHandler();
         }
     }
-    function notifyACB(){
+    /*function notifyACB(){
         this.forceUpdate();
-    }
+    }*/
 
     /*if(!promiseState.promise) {
         resolvePromise(promise, promiseState, notifyACB);
     }*/
+
 
     return(/*promiseNoData(promiseState)
     ||*/  <QuizView 
