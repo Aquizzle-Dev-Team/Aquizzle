@@ -1,0 +1,28 @@
+.historyDiv{
+    border: solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    grid-area: leaderboard;
+}
+.historyDiv h2{
+    color: white;
+}
+.historyDiv p{
+    color: lightgrey;
+}
+
+.historyDiv button{
+    margin: 20px;   
+    border-radius: 100px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    padding: 15px;
+}
+.historyDiv button:hover {
+    color: gray;
+}
+.historyDiv button:active {
+    transform: scale(0.98);
+}
