@@ -2,11 +2,12 @@ import { RootState } from '../app/store';
 import QuizView from '../views/quizView';
 import {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { increment} from '../features/counter/pointsSlice';
-import { decrementHealthBar} from '../features/healthBarSlice';
+import { increment, initialPointsValue} from '../features/counter/pointsSlice';
+import { decrementHealthBar, initialHealthBarValue} from '../features/healthBarSlice';
 import promiseNoData from "../views/promiseNoData";
 import resolvePromise from '../resolvePromise';
 import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } from '../features/quizQuestionAnswerSlice';
+import { resetQuestionsState } from '../features/questionSlice';
 
 
 export default
@@ -63,11 +64,22 @@ function Quiz(){
     }    
 
     const clickedOnWrongAnswerHandler = () =>{
-        if(healthBar === 1)
-            window.location.hash = "#homepage"
-            
-        updateQuestionsOnClick();
-        dispatch(decrementHealthBar())
+        if(healthBar === 1){
+            window.location.hash = "#death"
+
+            dispatch(resetQuestionsState())
+        
+            dispatch(setQuestion("You have lost!"))
+            dispatch(setAnswerA(""));
+            dispatch(setAnswerB(""));
+            dispatch(setAnswerC(""));
+            dispatch(setAnswerD(""));
+            dispatch(initialPointsValue(0))
+            dispatch(initialHealthBarValue(0))
+        } else{   
+            updateQuestionsOnClick();
+            dispatch(decrementHealthBar())
+        }
     }    
 
     const clickedOnAnswerHandler = (e: any) =>{
@@ -77,9 +89,6 @@ function Quiz(){
         } else{
             clickedOnWrongAnswerHandler();
         }
-    }
-    function notifyACB(){
-        this.forceUpdate();
     }
 
     /*if(!promiseState.promise) {

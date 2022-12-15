@@ -10,8 +10,6 @@ import {initialHealthBarValue} from '../features/healthBarSlice';
 import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } from '../features/quizQuestionAnswerSlice';
 import { changeTimeStamp } from '../features/timeStampSlice';
 
-
-
 export default
 function QuizSelector(){
     
