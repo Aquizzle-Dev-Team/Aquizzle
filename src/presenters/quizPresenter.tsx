@@ -2,8 +2,10 @@ import { RootState } from '../app/store';
 import QuizView from '../views/quizView';
 import {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { increment } from '../features/counter/pointsSlice';
+import { increment} from '../features/counter/pointsSlice';
 import { decrementHealthBar} from '../features/healthBarSlice';
+import promiseNoData from "../views/promiseNoData";
+import resolvePromise from '../resolvePromise';
 import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } from '../features/quizQuestionAnswerSlice';
 
 
@@ -17,6 +19,8 @@ function Quiz(){
     const answerD = useSelector((state: RootState) => state.QnA.answerD)
 
     const [index, setindex] = useState(1);
+    //const [promiseState] = useState({});
+    //const [, reRender] = useState();
     
     const points = useSelector((state: RootState) => state.points.value)
     const healthBar = useSelector((state: RootState) => state.healthBar.value)
@@ -74,9 +78,16 @@ function Quiz(){
             clickedOnWrongAnswerHandler();
         }
     }
+    function notifyACB(){
+        this.forceUpdate();
+    }
 
-    return(
-        <QuizView 
+    /*if(!promiseState.promise) {
+        resolvePromise(promise, promiseState, notifyACB);
+    }*/
+
+    return(/*promiseNoData(promiseState)
+    ||*/  <QuizView 
             question={question}   
             onClickAnswer = {clickedOnAnswerHandler}
             points = {points}
