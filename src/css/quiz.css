@@ -72,16 +72,10 @@
     color: white;
 }
 
-.generateButton {
+.cancelQuiz {
     grid-area: button;
     margin: auto;
     margin-bottom: 20px;
-}
-
-.generateButtonContainer {
-    grid-area: button;
-    text-align: center;
-    
 }
 .quizDiv button:hover{
     background-color: rgb(54, 54, 54);
