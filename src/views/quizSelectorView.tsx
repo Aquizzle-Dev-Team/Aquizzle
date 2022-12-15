@@ -13,7 +13,7 @@ function QuizSelectorView(props: any) {
 
     return(
         <animated.div style={fade} className="quizSelectorContainer">
-            <span className="title"><h2>What quiz do you wan't to play?</h2></span>
+            <span className="title"><h2>What quiz do you want to play?</h2></span>
             <div onClick={props.onPickQuiz} className="selectorCards jsCard">
                 <span className="cardText">JavaScript</span>
             </div>

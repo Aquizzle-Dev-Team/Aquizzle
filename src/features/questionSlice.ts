@@ -14,11 +14,14 @@ export const questionSlice = createSlice({
     reducers: {
         addQuestions: (state, action: PayloadAction<any[]>) => {
             state.value.push(...action.payload)
+        },
+        resetQuestionsState: (state) => {
+            state.value = [];
         }
     }
     
 })
 
-export const { addQuestions } = questionSlice.actions
+export const { addQuestions, resetQuestionsState } = questionSlice.actions
 
 export default questionSlice.reducer;

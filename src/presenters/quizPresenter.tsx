@@ -2,22 +2,22 @@ import { RootState } from '../app/store';
 import QuizView from '../views/quizView';
 import {useState} from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { addQuestions } from '../features/questionSlice';
-import {getQuestions} from '../quizSource'
-import { increment, initialPointsValue } from '../features/counter/pointsSlice';
-import { decrementHealthBar, initialHealthBarValue} from '../features/healthBarSlice';
+import { increment} from '../features/counter/pointsSlice';
+import { decrementHealthBar} from '../features/healthBarSlice';
 import promiseNoData from "../views/promiseNoData";
 import resolvePromise from '../resolvePromise';
+import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } from '../features/quizQuestionAnswerSlice';
 
 
 export default
 function Quiz(){
 
-    const [question, setQuestion] = useState("No question generated.");
-    const [answer1, setAnswer1] = useState("Answer 1");
-    const [answer2, setAnswer2] = useState("Answer 2");
-    const [answer3, setAnswer3] = useState("Answer 3");
-    const [answer4, setAnswer4] = useState("Answer 4");
+    const question = useSelector((state: RootState) => state.QnA.question)
+    const answerA = useSelector((state: RootState) => state.QnA.answerA)
+    const answerB= useSelector((state: RootState) => state.QnA.answerB)
+    const answerC = useSelector((state: RootState) => state.QnA.answerC)
+    const answerD = useSelector((state: RootState) => state.QnA.answerD)
+
     const [index, setindex] = useState(1);
     //const [promiseState] = useState({});
     //const [, reRender] = useState();
@@ -25,31 +25,14 @@ function Quiz(){
     const points = useSelector((state: RootState) => state.points.value)
     const healthBar = useSelector((state: RootState) => state.healthBar.value)
     const allQuestions = useSelector((state: RootState) => state.questions.value)
-    const chosenQuiz = useSelector((state: RootState) => state.selectedQuiz.value);
-    //let promise = {};
-
-
+    
     const dispatch = useDispatch();
-
-    const handleAddQuestions = () => {  
-        getQuestions({"tags": chosenQuiz}).then((result) => {
-            //promise = result;
-            setQuestion(result[0].question);
-            setAnswer1(result[0].answers.answer_a);
-            setAnswer2(result[0].answers.answer_b);
-            setAnswer3(result[0].answers.answer_c);
-            setAnswer4(result[0].answers.answer_d);
-            dispatch(addQuestions(result));
-        }) 
-        dispatch(initialPointsValue(0))
-        dispatch(initialHealthBarValue(3))
-    }
 
     const updateQuestionsOnClick = () =>{
         if(index < allQuestions.length - 1)
             setindex(prevCount => prevCount + 1)
         
-        setQuestion(allQuestions[index].question);
+        dispatch(setQuestion(allQuestions[index].question))
         randomizeCorrectAnswer();
     }
 
@@ -60,7 +43,7 @@ function Quiz(){
         let D = allQuestions[index].answers.answer_d
         let randomAnswer = [A, B, C, D]
 
-        let currIndex = randomAnswer.length, randIndex;
+        let currIndex = randomAnswer.length, randIndex: number;
         while (currIndex != 0) {
             randIndex = Math.floor(Math.random() * currIndex);
             currIndex--;
@@ -68,10 +51,10 @@ function Quiz(){
             randomAnswer[randIndex], randomAnswer[currIndex]];
         }
 
-        setAnswer1(randomAnswer[0]);
-        setAnswer2(randomAnswer[1]);
-        setAnswer3(randomAnswer[2]);
-        setAnswer4(randomAnswer[3]);
+        dispatch(setAnswerA(randomAnswer[0]));
+        dispatch(setAnswerB(randomAnswer[1]));
+        dispatch(setAnswerC(randomAnswer[2]));
+        dispatch(setAnswerD(randomAnswer[3]));
     }
 
     const clickedOnRightAnswerHandler = () =>{
@@ -80,6 +63,9 @@ function Quiz(){
     }    
 
     const clickedOnWrongAnswerHandler = () =>{
+        if(healthBar === 1)
+            window.location.hash = "#homepage"
+            
         updateQuestionsOnClick();
         dispatch(decrementHealthBar())
     }    
@@ -103,14 +89,13 @@ function Quiz(){
     return(/*promiseNoData(promiseState)
     ||*/  <QuizView 
             question={question}   
-            onAddQuestions={handleAddQuestions}
             onClickAnswer = {clickedOnAnswerHandler}
             points = {points}
             healthBar = {healthBar}
-            answer1 = {answer1}
-            answer2 = {answer2}
-            answer3 = {answer3}
-            answer4 = {answer4}
+            answer1 = {answerA}
+            answer2 = {answerB}
+            answer3 = {answerC}
+            answer4 = {answerD}
         />
     )
 }
