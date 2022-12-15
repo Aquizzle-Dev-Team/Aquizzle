@@ -1,5 +1,4 @@
 .Div{
-    margin-bottom: 10px;
     text-align: center;
     display: grid;
     grid-template-columns: 25% 25% 25% auto;

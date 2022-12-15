@@ -1,5 +1,7 @@
 .showDiv {
     grid-area: show;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .hide{

@@ -6,6 +6,8 @@ import { addQuestions } from '../features/questionSlice';
 import {getQuestions} from '../quizSource'
 import { increment, initialPointsValue } from '../features/counter/pointsSlice';
 import { decrementHealthBar, initialHealthBarValue} from '../features/healthBarSlice';
+import promiseNoData from "../views/promiseNoData";
+import resolvePromise from '../resolvePromise';
 
 
 export default
@@ -17,17 +19,21 @@ function Quiz(){
     const [answer3, setAnswer3] = useState("Answer 3");
     const [answer4, setAnswer4] = useState("Answer 4");
     const [index, setindex] = useState(1);
+    //const [promiseState] = useState({});
+    //const [, reRender] = useState();
     
     const points = useSelector((state: RootState) => state.points.value)
     const healthBar = useSelector((state: RootState) => state.healthBar.value)
     const allQuestions = useSelector((state: RootState) => state.questions.value)
     const chosenQuiz = useSelector((state: RootState) => state.selectedQuiz.value);
+    //let promise = {};
 
 
     const dispatch = useDispatch();
 
     const handleAddQuestions = () => {  
         getQuestions({"tags": chosenQuiz}).then((result) => {
+            //promise = result;
             setQuestion(result[0].question);
             setAnswer1(result[0].answers.answer_a);
             setAnswer2(result[0].answers.answer_b);
@@ -86,9 +92,16 @@ function Quiz(){
             clickedOnWrongAnswerHandler();
         }
     }
+    function notifyACB(){
+        this.forceUpdate();
+    }
 
-    return(
-        <QuizView 
+    /*if(!promiseState.promise) {
+        resolvePromise(promise, promiseState, notifyACB);
+    }*/
+
+    return(/*promiseNoData(promiseState)
+    ||*/  <QuizView 
             question={question}   
             onAddQuestions={handleAddQuestions}
             onClickAnswer = {clickedOnAnswerHandler}
