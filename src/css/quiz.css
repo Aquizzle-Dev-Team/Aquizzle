@@ -84,7 +84,8 @@
 .counter{
     grid-area: counter;
     font-size: 25px;
-    -webkit-text-stroke: 1px green;
+    color: green;
+    -webkit-text-stroke: 1.25px black;
     margin-top: 0px;
 }
 

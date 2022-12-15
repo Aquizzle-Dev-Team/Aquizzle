@@ -8,6 +8,7 @@
     grid-template-rows:auto;
     grid-template-areas:
     "image image"
+    "text text"
     "newQuiz goToHistory";
 }
 .deathDiv button{
@@ -37,6 +38,11 @@
 }
 .deathDiv .goToHistory{
     grid-area: goToHistory;
+}
+.deathDiv p{
+    grid-area: text;
+    font-size: 30px;
+    color: white;
 }
 
 @keyframes fadeIn {
