@@ -1,11 +1,14 @@
 import { RootState } from '../app/store';
 import QuizView from '../views/quizView';
-import {useState} from 'react';
+import {useEffect} from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { increment, initialPointsValue} from '../features/counter/pointsSlice';
 import { decrementHealthBar, initialHealthBarValue} from '../features/healthBarSlice';
-import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } from '../features/quizQuestionAnswerSlice';
-import { resetQuestionsState } from '../features/questionSlice';
+import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD, setAnswerE, setAnswerF } from '../features/quizQuestionAnswerSlice';
+import { addQuestions, resetQuestionsState } from '../features/questionSlice';
+import { incrementIndex, setIndex } from '../features/indexSlice';
+import { addPromiseState } from '../features/promiseStateSlice';
+import { getQuestions } from '../quizSource';
 
 
 export default
@@ -16,8 +19,10 @@ function Quiz(){
     const answerB= useSelector((state: RootState) => state.QnA.answerB)
     const answerC = useSelector((state: RootState) => state.QnA.answerC)
     const answerD = useSelector((state: RootState) => state.QnA.answerD)
+    const answerE = useSelector((state: RootState) => state.QnA.answerE)
+    const answerF = useSelector((state: RootState) => state.QnA.answerF)
 
-    const [index, setindex] = useState(1);
+    const index = useSelector((state: RootState) => state.index.value);
 
     const promiseState = useSelector((state: RootState) => state.promiseState.value)
 
@@ -25,22 +30,48 @@ function Quiz(){
     const healthBar = useSelector((state: RootState) => state.healthBar.value)
     const allQuestions = useSelector((state: RootState) => state.questions.value)
     
+    const chosenQuiz = useSelector((state: RootState) => state.selectedQuiz.value);
+    const timeStamp = useSelector((state: RootState) => state.timeStamp.value);
+    
     const dispatch = useDispatch();
 
     const updateQuestionsOnClick = () =>{
         if(index < allQuestions.length - 1)
-            setindex(prevCount => prevCount + 1)
-        
-        dispatch(setQuestion(allQuestions[index].question))
+            dispatch(incrementIndex())
         randomizeCorrectAnswer();
     }
 
+    useEffect(() => {
+        dispatch(addPromiseState(true));
+        if(window.location.hash === "#quiz")
+            getQuestions({"tags": chosenQuiz}).then((result) => {
+                console.log(result)
+                dispatch(addPromiseState(false));
+                dispatch(resetQuestionsState())
+                dispatch(setIndex(0))
+                dispatch(addQuestions(result));
+
+                dispatch(setQuestion(result[0].question))
+                dispatch(setAnswerA(result[0].answers.answer_a));
+                dispatch(setAnswerB(result[0].answers.answer_b));
+                dispatch(setAnswerC(result[0].answers.answer_c));
+                dispatch(setAnswerD(result[0].answers.answer_d));
+                dispatch(setAnswerE(result[0].answers.answer_e));
+                dispatch(setAnswerF(result[0].answers.answer_f));
+            })
+
+        dispatch(initialPointsValue(0))
+        dispatch(initialHealthBarValue(3))    
+    }, [timeStamp])
+
     const randomizeCorrectAnswer = () =>{
-        let A = allQuestions[index].answers.answer_a
-        let B = allQuestions[index].answers.answer_b
-        let C = allQuestions[index].answers.answer_c
-        let D = allQuestions[index].answers.answer_d
-        let randomAnswer = [A, B, C, D]
+        let A = allQuestions[index + 1].answers.answer_a
+        let B = allQuestions[index + 1].answers.answer_b
+        let C = allQuestions[index + 1].answers.answer_c
+        let D = allQuestions[index + 1].answers.answer_d
+        let E = allQuestions[index + 1].answers.answer_e
+        let F = allQuestions[index + 1].answers.answer_f
+        let randomAnswer = [A, B, C, D, E, F]
 
         let currIndex = randomAnswer.length, randIndex: number;
         while (currIndex != 0) {
@@ -50,10 +81,13 @@ function Quiz(){
             randomAnswer[randIndex], randomAnswer[currIndex]];
         }
 
+        dispatch(setQuestion(allQuestions[index + 1].question))
         dispatch(setAnswerA(randomAnswer[0]));
         dispatch(setAnswerB(randomAnswer[1]));
         dispatch(setAnswerC(randomAnswer[2]));
         dispatch(setAnswerD(randomAnswer[3]));
+        dispatch(setAnswerE(randomAnswer[4]));
+        dispatch(setAnswerF(randomAnswer[5]));
     }
 
     const clickedOnRightAnswerHandler = () =>{
@@ -72,6 +106,8 @@ function Quiz(){
             dispatch(setAnswerB(""));
             dispatch(setAnswerC(""));
             dispatch(setAnswerD(""));
+            dispatch(setAnswerE(""));
+            dispatch(setAnswerF(""));
             dispatch(initialHealthBarValue(0))
         } else{   
             updateQuestionsOnClick();
@@ -79,13 +115,17 @@ function Quiz(){
         }
     }    
 
-    const clickedOnAnswerHandler = (e: any) =>{
+    function isCorrectAnswer(answer){
+        const answers = allQuestions[index].answers;
+        const correctAnswers = allQuestions[index].correct_answers;
+        return correctAnswers[`${Object.keys(answers).find(key => answers[key] === answer)}_correct`] === "true" ? true : false;
+    }
 
-        if(e.target.innerText === allQuestions[index-1].answers.answer_a){
+    const clickedOnAnswerHandler = (e: any) =>{
+        if (isCorrectAnswer(e.target.innerText))
             clickedOnRightAnswerHandler();
-        } else{
+        else
             clickedOnWrongAnswerHandler();
-        }
     }
 
     return(
@@ -99,7 +139,9 @@ function Quiz(){
         answer1 = {answerA}
         answer2 = {answerB}
         answer3 = {answerC}
-        answer4 = {answerD} /> }
+        answer4 = {answerD}
+        answer5 = {answerE}
+        answer6 = {answerF} /> }
     </div>
     )
 }

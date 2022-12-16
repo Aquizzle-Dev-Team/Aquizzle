@@ -7,6 +7,7 @@ import quizQuestionAnswerReducer from '../features/quizQuestionAnswerSlice';
 import timeStampReducer from '../features/timeStampSlice'
 import promiseStateReducer from '../features/promiseStateSlice';
 import resetCodeReducer from '../features/resetCodeSlice';
+import indexReducer from '../features/indexSlice';
 
 export const store = configureStore({
   reducer: {
@@ -17,7 +18,8 @@ export const store = configureStore({
     QnA: quizQuestionAnswerReducer,
     timeStamp: timeStampReducer,
     promiseState: promiseStateReducer,
-    resetCode: resetCodeReducer
+    resetCode: resetCodeReducer,
+    index: indexReducer
   },
 })
 
