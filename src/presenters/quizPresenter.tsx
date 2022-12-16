@@ -91,8 +91,7 @@ function Quiz(){
     }
 
     const clickedOnRightAnswerHandler = () =>{
-        updateQuestionsOnClick();
-        dispatch(increment())
+        dispatch(increment());
     }    
 
     const clickedOnWrongAnswerHandler = () =>{
@@ -109,8 +108,7 @@ function Quiz(){
             dispatch(setAnswerE(""));
             dispatch(setAnswerF(""));
             dispatch(initialHealthBarValue(0))
-        } else{   
-            updateQuestionsOnClick();
+        } else{
             dispatch(decrementHealthBar())
         }
     }    
@@ -126,6 +124,12 @@ function Quiz(){
             clickedOnRightAnswerHandler();
         else
             clickedOnWrongAnswerHandler();
+        
+        if(index < allQuestions.length - 1){
+            updateQuestionsOnClick()
+        } else {
+            window.location.hash = "#homepage"
+        }
     }
 
     return(
