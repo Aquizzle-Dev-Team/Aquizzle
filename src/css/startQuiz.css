@@ -1,20 +1,25 @@
 .startQuizDiv{
-    text-align: center;
-    width: 350px;
+    width: 50%;
     grid-area: startHomePage;
     margin: auto;
-    animation: fadeIn 5s;
+    animation: fadeIn 3s;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "img img"
+    "startNewGame seeYourHistory";
 }
 .startQuizDiv img{
-    height: 78%;
-    width: 80%;
+    grid-area: img;
+    margin-left: auto;
+    margin-right: auto;
 }
 .startQuizDiv button{
   background-color: rgb(32, 32, 32);
   color: white;
   font-size: 15px;
   border: solid 3px black;
-  margin: 20px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 100px;
@@ -23,6 +28,12 @@
 }
 .startQuizDiv button:active {
   transform: scale(0.98);
+}
+.startNewGame{
+  grid-area: startNewGame;
+}
+.seeYourHistory{
+  grid-area: seeYourHistory;
 }
 
 @media (prefers-reduced-motion: no-preference) {

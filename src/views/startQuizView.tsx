@@ -15,7 +15,8 @@ function StartQuizView(props: any){
     return(
         <animated.div style={fade} className = "startQuizDiv">
             <img src={logo} alt="Logo"/>
-            <animated.button onClick = {() => {window.location.hash="#quizselector";}} >Start a game</animated.button>
+            <animated.button className="seeYourHistory" onClick = {() => {window.location.hash="#history";}} >See your progress</animated.button>
+            <animated.button className="startNewGame" onClick = {() => {window.location.hash="#quizselector";}} >Start a new game</animated.button>
         </animated.div>
     )
 }
