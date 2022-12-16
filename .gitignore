@@ -10,3 +10,4 @@ build
 firebase.json
 .firebaserc
 database.rules.json
+*.log
