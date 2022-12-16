@@ -1,4 +1,7 @@
+import { useDispatch } from "react-redux";
 import {BASE_URL, API_KEY} from "./apiConfig";
+import { addPromiseState } from "./features/promiseStateSlice";
+
 
 function callAPI(params: any): Promise<any> {
     params = new URLSearchParams(params);

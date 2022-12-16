@@ -1,8 +1,19 @@
 import "../css/quizSelector.css";
+import { animated, useSpring } from "@react-spring/web";
 
 function QuizSelectorView(props: any) {
+    const fade = useSpring({
+        from: {
+            opacity: 0
+        },
+        to: {
+            opacity: 1
+        }
+    })
+
     return(
-        <div className="quizSelectorContainer">
+        <animated.div style={fade} className="quizSelectorContainer">
+            <span className="title"><h2>What quiz do you want to play?</h2></span>
             <div onClick={props.onPickQuiz} className="selectorCards jsCard">
                 <span className="cardText">JavaScript</span>
             </div>
@@ -27,7 +38,7 @@ function QuizSelectorView(props: any) {
             <div onClick={props.onPickQuiz} className="selectorCards kuberCard">
                 <span className="cardText">Kubernetes</span>
             </div>
-        </div>
+        </animated.div>
     )
 }
 

@@ -1,12 +1,10 @@
 .Div{
-    margin-bottom: 10px;
     text-align: center;
     display: grid;
     grid-template-columns: 25% 25% 25% auto;
     grid-template-rows: auto;
     grid-template-areas:
     "history leaderboard aboutUs something";
-    background-color: #30303000;
     grid-area: homePageButtons;
     border-bottom: solid;
     background-color:#313541;
@@ -16,11 +14,15 @@
     border-radius: 100px;
     background-color: rgb(32, 32, 32);
     color: white;
+    font-size: 15px;
+    border: solid 3px black;
 }
 .Div button:hover{
-    background-size: cover;
-    background-position-y: -20px;
-    font-size: 15px;
+    color: gray;
+}
+
+.Div button:active {
+    transform: scale(0.98);
 }
 .history{
     grid-area: history;

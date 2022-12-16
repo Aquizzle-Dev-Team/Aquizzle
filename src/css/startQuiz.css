@@ -1,26 +1,39 @@
 .startQuizDiv{
-    text-align: center;
-    width: 350px;
+    width: 50%;
     grid-area: startHomePage;
     margin: auto;
-    margin-top: 100px;
+    animation: fadeIn 3s;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "img img"
+    "startNewGame seeYourHistory";
 }
 .startQuizDiv img{
-    height: 78%;
-    width: 80%;
+    grid-area: img;
+    margin-left: auto;
+    margin-right: auto;
 }
 .startQuizDiv button{
-    margin-top: 30px;
-    width: 40%;
-    height: 50px;
-    border-radius: 5px;
-    background-color: rgb(255, 255, 255);
-    border: 1.5px solid;
+  background-color: rgb(32, 32, 32);
+  color: white;
+  font-size: 15px;
+  border: solid 3px black;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 100px;
+  width: 50%;
+  padding: 10px;
 }
-
-.startQuizDiv button:hover{
-    background-image: url(../images/kermit.jpg);
-    background-size: cover;
+.startQuizDiv button:active {
+  transform: scale(0.98);
+}
+.startNewGame{
+  grid-area: startNewGame;
+}
+.seeYourHistory{
+  grid-area: seeYourHistory;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -30,13 +43,17 @@
 }
 
 @keyframes startQuizDiv-img-float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
+  0% {
+    transform: translateY(0);
   }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

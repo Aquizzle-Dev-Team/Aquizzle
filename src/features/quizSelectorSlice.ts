@@ -1,14 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 const initialState = {
-    value: "sql"
+    value: "mysql"
 }
 
 export const quizSelectorSlice = createSlice({
     name: "selectedQuiz",
     initialState,
     reducers: {
-        changeCurrentQuiz: (state, action: PayloadAction<string>) => {
+        changeCurrentQuiz: (state, action: PayloadAction<any>) => {
             state.value = action.payload
         }
     }

@@ -5,9 +5,8 @@
   grid-template-rows: 100px auto;
   grid-template-areas:
   "logo homePageButtons"
-  "startHomePage startHomePage"
-  "quizSelector quizSelector"
-  "quiz quiz"
+  "show show"
+  "death death"
   "footer footer";
   height: 100vh;
 }
@@ -34,4 +33,8 @@
 
 .quizSelector {
   grid-area: quizSelector;
+}
+
+.leaderboard{
+  grid-area: leaderboard;
 }

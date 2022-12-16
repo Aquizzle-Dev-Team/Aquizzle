@@ -1,0 +1,51 @@
+.deathDiv{
+    grid-area: death;
+    display: grid;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: auto;
+    grid-template-rows:auto;
+    grid-template-areas:
+    "image image"
+    "text text"
+    "newQuiz goToHistory";
+}
+.deathDiv button{
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    border: solid 3px black;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    width: 50%;
+    padding: 10px;
+}
+.deathDiv button:active {
+    transform: scale(0.98);
+}
+.deathDiv img{
+    grid-area: image;
+    margin-left: auto;
+    margin-right: auto;
+    animation: fadeIn 5s;
+}
+
+.deathDiv .newQuiz{
+    grid-area: newQuiz;
+}
+.deathDiv .goToHistory{
+    grid-area: goToHistory;
+}
+.deathDiv p{
+    grid-area: text;
+    font-size: 30px;
+    color: white;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

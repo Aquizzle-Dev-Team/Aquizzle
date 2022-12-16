@@ -10,8 +10,11 @@ const StartQuiz = require('../presenters/startQuizPresenter').default;
 const Quiz = require('../presenters/quizPresenter').default;
 const Footer = require('../presenters/footerPresenter').default;
 const QuizSelector = require('../presenters/quizSelectorPresenter').default;
+const Leaderboard = require('../presenters/leaderboardPresenter').default;
 const Show=require("../presenters/show.tsx").default;
 const AboutUs=require("../presenters/aboutUsPresenter.tsx").default;
+const Death=require("../presenters/deathPresenter.tsx").default;
+const History=require("../presenters/historyPresenter.tsx").default;
 const Auth=require("../presenters/authPresenter").default;
 const SetUsername=require("../presenters/setUsernamePresenter").default;
 const ForgottenPassword=require("../presenters/forgottenPasswordPresenter").default;
@@ -30,6 +33,12 @@ function App() {
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
 
+      <Show hash = "#death"><Death/></Show>
+
+      <Show hash = "#history"><History/></Show>
+
+      <Show hash = "#leaderboard"><Leaderboard className="leaderboard"/></Show>
+      
       <Show hash="#auth"><Auth className="auth"/></Show>
 
       <Show hash="#setusername"><SetUsername className="setUsername"/></Show>
@@ -57,16 +66,3 @@ function App() {
 }
 
 export default App;
-
-/*return (
-  <div className="App">
-    <Logo className="logo"/>
-    <HomePageButtons className="homePageButtons"/>
-
-    <QuizSelector className="quizSelector"/>
-
-    <StartQuiz class="startHomePage"/>
-    <Quiz className="quiz"/>
-    {<Footer className="footer"/>}
-  </div>
-);*/

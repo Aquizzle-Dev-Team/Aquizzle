@@ -18,6 +18,6 @@ function Show(props: any) {
         }
         React.useEffect( componentWasCreatedACB, [] );
     return (
-    <div className = {(window.location.hash.split('?')[0] === props.hash) ? "" : 'hide'}>{props.children}</div>
+        <div className = {(window.location.hash.split('?')[0] === props.hash) ? 'showDiv' : 'hide'}>{props.children}</div>
     );
 }
