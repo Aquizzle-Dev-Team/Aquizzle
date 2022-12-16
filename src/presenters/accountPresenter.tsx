@@ -18,8 +18,6 @@ export default function Account() {
     return <AccountView
         username={username ? username : 'not loaded'}
         email={email ? email : 'not loaded'}
-        changeUsername={() => {window.location.hash='#setusername'}}
-        changeEmail={() => {window.location.hash='#changeemail'}}
         logout={() => {signOut(auth).then(() => {
             window.location.hash='#homepage';
         })}}
