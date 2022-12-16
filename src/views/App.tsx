@@ -12,6 +12,13 @@ const Footer = require('../presenters/footerPresenter').default;
 const QuizSelector = require('../presenters/quizSelectorPresenter').default;
 const Show=require("../presenters/show.tsx").default;
 const AboutUs=require("../presenters/aboutUsPresenter.tsx").default;
+const Auth=require("../presenters/authPresenter").default;
+const SetUsername=require("../presenters/setUsernamePresenter").default;
+const ForgottenPassword=require("../presenters/forgottenPasswordPresenter").default;
+const ResetPassword=require("../presenters/resetPasswordPresenter").default;
+const ResetSuccess=require("../presenters/resetSuccessPresenter").default;
+const Account=require("../presenters/accountPresenter").default;
+const ChangeEmail=require("../presenters/changeEmailPresenter").default;
 
 function App() {
   if((window.location.hash === "") ){
@@ -22,6 +29,20 @@ function App() {
     <div className="App">
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
+
+      <Show hash="#auth"><Auth className="auth"/></Show>
+
+      <Show hash="#setusername"><SetUsername className="setUsername"/></Show>
+
+      <Show hash="#forgottenpassword"><ForgottenPassword className="forgottenPassword"/></Show>
+
+      <Show hash="#resetpassword"><ResetPassword className="resetPassword"/></Show>
+
+      <Show hash="#resetsuccess"><ResetSuccess className="resetSuccess"/></Show>
+
+      <Show hash="#account"><Account className="account"/></Show>
+
+      <Show hash="#changeemail"><ChangeEmail className="changeEmail"/></Show>
 
       <Show hash = "#quizselector"><QuizSelector className="quizSelector"/></Show>
 

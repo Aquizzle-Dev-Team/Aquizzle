@@ -3,6 +3,7 @@ import questionsReducer from "../features/questionSlice"
 import pointsReducer from "../features/counter/pointsSlice"
 import healthBarReducer from "../features/healthBarSlice"
 import quizSelectorSlice from '../features/quizSelectorSlice';
+import resetCodeReducer from '../features/resetCodeSlice';
 
 
 export const store = configureStore({
@@ -10,7 +11,8 @@ export const store = configureStore({
     questions: questionsReducer,
     points: pointsReducer,
     healthBar: healthBarReducer,
-    selectedQuiz: quizSelectorSlice
+    selectedQuiz: quizSelectorSlice,
+    resetCode: resetCodeReducer
   },
 })
 
