@@ -147,7 +147,7 @@ function Quiz(){
         if(index < allQuestions.length - 1){
             updateQuestionsOnClick()
         } else {
-            window.location.hash = "#homepage"
+            window.location.hash = "#win"
         }
     }
 

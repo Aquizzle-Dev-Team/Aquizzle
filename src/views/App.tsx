@@ -22,6 +22,7 @@ const ResetPassword=require("../presenters/resetPasswordPresenter").default;
 const ResetSuccess=require("../presenters/resetSuccessPresenter").default;
 const Account=require("../presenters/accountPresenter").default;
 const ChangeEmail=require("../presenters/changeEmailPresenter").default;
+const Win=require("../presenters/winPresenter.tsx").default;
 
 function App() {
   if((window.location.hash === "") ){
@@ -32,6 +33,8 @@ function App() {
     <div className="App">
       <Logo className="logo"/>
       <HomePageButtons className="homePageButtons"/>
+
+      <Show hash = "#win"><Win/></Show>
 
       <Show hash = "#death"><Death/></Show>
 

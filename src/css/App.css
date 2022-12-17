@@ -6,7 +6,6 @@
   grid-template-areas:
   "logo homePageButtons"
   "show show"
-  "death death"
   "footer footer";
   height: 100vh;
 }

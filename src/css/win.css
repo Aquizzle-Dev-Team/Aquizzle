@@ -1,0 +1,68 @@
+.winDiv{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows:auto;
+    grid-template-areas:
+    "winimage winimage"
+    "h2 h2"
+    "h3 h3"
+    "playAgain lookAtProgress";
+}
+.winDiv img{
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-area: winimage;
+}
+
+.winDiv h2{
+    width: 30%;
+    color: white;
+    border: solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border-radius: 100px;
+    background-color: black;
+    grid-area: h2;
+}
+
+.winDiv h3{
+    width: 30%;
+    color: white;
+    border: solid black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    margin-top: 0;
+    border-radius: 100px;
+    background-color: black;
+    grid-area: h3;
+}
+
+.winDiv button{
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    border: solid 3px black;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 100px;
+    width: 50%;
+    padding: 10px;
+}
+
+.winDiv button:active{
+    transform: scale(0.98);
+}
+
+.winDiv .lookAtProgress{
+    grid-area: lookAtProgress;
+}
+
+.winDiv .playAgain{
+    grid-area: playAgain;
+}
