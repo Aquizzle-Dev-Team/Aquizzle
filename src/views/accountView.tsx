@@ -3,9 +3,9 @@ export default function AccountView(props: any) {
         <div>
             <h2>My account</h2>
             <p>{`Username: ${props.username}`}</p>
-            <p onClick={props.changeUsername}>change</p>
+            <a href='/#setusername'>change</a>
             <p>{`Email: ${props.email}`}</p>
-            <p onClick={props.changeEmail}>change</p>
+            <a href='/#changeemail'>change</a>
             <button onClick={props.logout}>Logout</button>
             <button onClick={() => {window.location.hash='#homepage'}}>Back to home</button>
         </div>

@@ -18,6 +18,8 @@
     "answer2 answer2"
     "answer3 answer3"
     "answer4 answer4"
+    "answer5 answer5"
+    "answer6 answer6"
     "button button";
 }
 .question{
@@ -62,6 +64,30 @@
 }
 .answer4{
     grid-area: answer4;
+    margin: 20px;
+    margin-top: 0px;
+    height: 80%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+.answer5{
+    grid-area: answer5;
+    margin: 20px;
+    margin-top: 0px;
+    height: 80%;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(32, 32, 32);
+    color: white;
+}
+
+.answer6{
+    grid-area: answer6;
     margin: 20px;
     margin-top: 0px;
     height: 80%;

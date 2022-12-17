@@ -6,6 +6,8 @@ const initialState =  {
     answerB: "Answer B",
     answerC: "Answer C",
     answerD: "Answer D",
+    answerE: "Answer E",
+    answerF: "Answer F"
 };
 
 export const quizQuestionAnswerSlice = createSlice({
@@ -27,10 +29,16 @@ export const quizQuestionAnswerSlice = createSlice({
         setAnswerD: (state, action: PayloadAction<any>) => {
             state.answerD = action.payload
         },
+        setAnswerE: (state, action: PayloadAction<any>) => {
+            state.answerE = action.payload
+        },
+        setAnswerF: (state, action: PayloadAction<any>) => {
+            state.answerF = action.payload
+        }
     }
     
 })
 
-export const { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD } = quizQuestionAnswerSlice.actions
+export const { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD, setAnswerE, setAnswerF } = quizQuestionAnswerSlice.actions
 
 export default quizQuestionAnswerSlice.reducer;
