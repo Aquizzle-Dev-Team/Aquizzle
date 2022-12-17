@@ -6,49 +6,50 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-    "accountTitle accountTitle"
-    "username email"
-    "usernameChange emailChange"
-    "logOutButton backHomeButton"
-    "changeBackgroundColor changeBackgroundImage";
-    border: solid;
-    border-radius: 100px;
-    background-color: rgb(212, 212, 212);
+    "accountTitle accountTitle accountTitle accountTitle"
+    "usernameChange username emailChange email"
+    "logOutButton logOutButton backHomeButton backHomeButton"
+    "changeBackgroundColor changeBackgroundColor changeBackgroundImage changeBackgroundImage";
+    border: solid black;
+    border-radius: 25px;
+    background-color:#313541;
     background-repeat: no-repeat;
     background-size: cover;
+    color: white;
 }
 .myAccountDiv .accountTitle{
-    color: black;
     font-family: 'Times New Roman', Times, serif ;
     grid-area: accountTitle;
 }
 
 .myAccountDiv .username{
-    color: black;
     font-family: 'Times New Roman', Times, serif ;
     grid-area: username;
-    width: 50%;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: 10px;
 }
 
 .myAccountDiv .usernameChange{
-    color: blue;
+    color: lightblue;
     grid-area: usernameChange;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
 }
 
 .myAccountDiv .email{
-    color: black;
     font-family: 'Times New Roman', Times, serif ;
     grid-area: email;
-    width: 50%;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: 10px;
 }
 
 .myAccountDiv .emailChange{
-    color: blue;
+    color: lightblue;
     grid-area: emailChange;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
 }
 
 .myAccountDiv button{

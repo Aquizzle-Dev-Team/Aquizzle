@@ -1,0 +1,38 @@
+.resetSuccessDiv{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "resetSuccessTitle"
+    "resetSuccessContinue";
+    border-radius: 25px;
+    padding: 10px;
+}
+.resetSuccessDiv button{
+    margin: 10px;
+    width: 25%;
+    padding: 7px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 100px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    border: solid 3px black;
+}
+.resetSuccessDiv .resetSuccessTitle{
+    grid-area: resetSuccessTitle;
+    color: white;
+}
+
+.resetSuccessDiv .resetSuccessContinue{
+    grid-area: resetSuccessContinue;
+    font-size: 20px;
+}
+
+.resetSuccessDiv button:active {
+    transform: scale(0.98);
+}

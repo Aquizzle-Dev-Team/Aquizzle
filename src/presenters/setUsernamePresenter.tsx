@@ -17,7 +17,7 @@ export default function SetUsername() {
                     displayName: username
                 });
                 setErrorMessage('');
-                window.location.hash='#homepage';
+                window.location.hash='#account';
             }
             else
                 setErrorMessage('You must enter a username.');

@@ -1,0 +1,59 @@
+.changeEmailDiv{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "changeEmailTitle changeEmailTitle"
+    "changeEmailLable changeEmailLable"
+    "changeEmailInput changeEmailInput"
+    "changeEmailError changeEmailError"
+    "changeEmailConfirm changeEmailBackHome";
+    border: solid black;
+    border-radius: 25px;
+    background-color:#313541;
+    padding: 10px;
+    color: white;
+}
+.changeEmailDiv button{
+    margin: 10px;
+    width: 40%;
+    padding: 7px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 100px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    border: solid 3px black;
+}
+.changeEmailDiv .changeEmailTitle{
+    grid-area: changeEmailTitle;
+}
+.changeEmailDiv .changeEmailLable{
+    grid-area: changeEmailLable;
+    font-size: 20px;
+}
+.changeEmailDiv .changeEmailInput{
+    grid-area: changeEmailInput;
+    margin-top: 10px;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.changeEmailDiv .changeEmailError{
+    grid-area: changeEmailError;
+    color: red;
+}
+.changeEmailDiv .changeEmailConfirm{
+    grid-area: changeEmailConfirm;
+}
+.changeEmailDiv .changeEmailBackHome{
+    grid-area: changeEmailBackHome;
+}
+
+.changeEmailDiv button:active {
+    transform: scale(0.98);
+}

@@ -1,0 +1,81 @@
+.logInDiv{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "logInTitle logInTitle"
+    "emailLable logInEmail "
+    "passwordLable logInPassword"
+    "logInErrorMessage logInErrorMessage"
+    "logInButton signUpButton "
+    "logInBackHome logInBackHome"
+    "forgotYourPassword forgotYourPassword";
+    border: solid black;
+    border-radius: 25px;
+    background-color:#313541;
+    padding: 10px;
+    color: white;
+}
+
+.logInDiv button{
+    margin: 10px;
+    width: 40%;
+    padding: 7px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 100px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    border: solid 3px black;
+}
+
+.logInDiv .logInTitle{
+    grid-area: logInTitle;
+}
+.logInDiv .emailLable{
+    grid-area: emailLable;
+    margin-left: auto;
+}
+.logInDiv .logInEmail{
+    grid-area: logInEmail;
+    width: 30%;
+    margin-left: 10px;
+}
+.logInDiv .passwordLable{
+    grid-area: passwordLable;
+    margin-left: auto;
+    margin-top: 10px;
+}
+.logInDiv .logInPassword{
+    grid-area: logInPassword;
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.logInDiv .logInErrorMessage{
+    grid-area: logInErrorMessage;
+    color: red;
+}
+.logInDiv .logInButton{
+    grid-area: logInButton;
+}
+.logInDiv .signUpButton{
+    grid-area: signUpButton;
+}
+.logInDiv .forgotYourPassword{
+    grid-area: forgotYourPassword;
+    color: lightblue;
+    margin-right: auto;
+    margin-left: auto;
+}
+.logInDiv .logInBackHome{
+    grid-area: logInBackHome;
+}
+
+.logInDiv button:active {
+    transform: scale(0.98);
+}

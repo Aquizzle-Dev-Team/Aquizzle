@@ -1,0 +1,59 @@
+.setUsernameDiv{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "setUsernameTitle setUsernameTitle"
+    "usernameLable usernameLable"
+    "newUsername newUsername"
+    "newUsernameError newUsernameError"
+    "setNewUsername setUsernameBackHome";
+    border: solid black;
+    border-radius: 25px;
+    background-color:#313541;
+    padding: 10px;
+    color: white;
+}
+.setUsernameDiv button{
+    margin: 10px;
+    width: 40%;
+    padding: 7px;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 100px;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    font-size: 15px;
+    border: solid 3px black;
+}
+.setUsernameDiv .setUsernameTitle{
+    grid-area: setUsernameTitle;
+}
+.setUsernameDiv .usernameLable{
+    grid-area: usernameLable;
+    font-size: 20px;
+}
+.setUsernameDiv .newUsername{
+    grid-area: newUsername;
+    margin-top: 10px;
+    width: 30%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.setUsernameDiv .newUsernameError{
+    grid-area: newUsernameError;
+    color: red;
+}
+.setUsernameDiv .setNewUsername{
+    grid-area: setNewUsername;
+}
+.setUsernameDiv .setUsernameBackHome{
+    grid-area: setUsernameBackHome;
+}
+
+.setUsernameDiv button:active {
+    transform: scale(0.98);
+}
