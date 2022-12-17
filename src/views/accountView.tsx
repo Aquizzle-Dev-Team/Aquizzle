@@ -1,13 +1,17 @@
+import '../css/account.css'
+
 export default function AccountView(props: any) {
     return (
-        <div>
-            <h2>My account</h2>
-            <p>{`Username: ${props.username}`}</p>
-            <a href='/#setusername'>change</a>
-            <p>{`Email: ${props.email}`}</p>
-            <a href='/#changeemail'>change</a>
-            <button onClick={props.logout}>Logout</button>
-            <button onClick={() => {window.location.hash='#homepage'}}>Back to home</button>
+        <div className="myAccountDiv" id="Account">
+            <h1 className="accountTitle">My account</h1>
+            <h2 className="username">{`Username: ${props.username}`}</h2>
+            <a href='/#setusername' className="usernameChange">Change username</a>
+            <h2 className="email">{`Email: ${props.email}`}</h2>
+            <a href='/#changeemail' className="emailChange">Change email</a>
+            <button className="logOutButton" onClick={props.logout}>Logout</button>
+            <button className="backHomeButton" onClick={() => {window.location.hash='#homepage'}}>Back to home</button>
+            <button className="changeBackgroundColor" onClick={props.changeColor}>Change your background color</button>
+            <button className="changeBackgroundImage" onClick={props.changeImage}>Change your background color</button>
         </div>
     );
 }
