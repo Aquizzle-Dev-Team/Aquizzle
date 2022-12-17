@@ -9,23 +9,25 @@ export default
 function History(){
     const auth = getAuth(firebaseApp);
     const quiz = useSelector((state: RootState) => state.PerformedQuiz.value).filter((quiz) => {
-        if(quiz.performedByuid === auth.currentUser.uid) return true;
+        if(quiz.performedByuid === auth?.currentUser.uid) return true;
     });
     const [filteredQuiz, changeFilteredQuiz] = useState(quiz)
 
-    console.log(auth.currentUser.displayName);
+    //console.log(auth?.currentUser.displayName);
     
 
 
     const quizToShow = (e:any) => {
 
+        let quizSortedByScore = [...quiz].sort((a :any, b : any) => {return (b.score-a.score)})
+
         if (e.target.value === "all") {
-            changeFilteredQuiz(quiz);
+            changeFilteredQuiz(quizSortedByScore);
         } else {
         const filterQuizByType = (quiz) => {
             if(quiz.typeOfQuiz === e.target.value) return true;
         }
-        changeFilteredQuiz(quiz.filter(filterQuizByType));
+        changeFilteredQuiz(quizSortedByScore.filter(filterQuizByType));
         }
 
         

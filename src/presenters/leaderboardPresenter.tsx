@@ -9,13 +9,16 @@ function Leaderboard(){
     const [filteredQuiz, changeFilteredQuiz] = useState(quiz)
 
     const quizToShow = (e:any) => {
+        
+        let quizSortedByScore = [...quiz].sort((a :any, b : any) => {return (b.score-a.score)})
+
         if (e.target.value === "all") {
-            changeFilteredQuiz(quiz);
+            changeFilteredQuiz(quizSortedByScore);
         } else {
         const quizFilter = (quiz) => {
             if(quiz.typeOfQuiz === e.target.value) return true;
         }
-        changeFilteredQuiz(quiz.filter(quizFilter));
+        changeFilteredQuiz(quizSortedByScore.filter(quizFilter));
         }
     }
 
