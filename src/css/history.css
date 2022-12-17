@@ -26,3 +26,12 @@
 .historyDiv button:active {
     transform: scale(0.98);
 }
+
+.completedQuiz {
+    text-align: left;
+    margin: 5px auto 5px auto;
+    width: 50%;
+    border: solid white 2px;
+    color: white;
+    padding: 3px;
+}
