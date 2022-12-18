@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import '../css/homePageButtons.css'
 
 export default function HomePageButtonsView(props: any){

@@ -4,13 +4,12 @@ function LeaderboardView(props: any){
     const renderPerformedQuizzes = () => {
         const performedQuizCB = (quiz, key) => {
             return (
-                <div key={key} className="completedQuiz">
-                    <div className='quizType'>Quiz: {quiz.typeOfQuiz}</div>
-                    <div className='score'>Score: {quiz.score}</div>
-                    <div className='quizuid'>uid: {quiz.performedByuid}</div>
-                    <div className='performedBy'>name: {quiz.performedByName}</div>
-                    <div className='dateAndTime'>{`Date: ${quiz.date}`}</div>
-                    <div className='dateAndTime'>{`Time: ${quiz.time}`}</div>
+                <div key={key} className="completedQuizLeaderboard">
+                    <div className='quizTypeLeaderboard'>Quiz: {quiz.typeOfQuiz}</div>
+                    <div className='nameLeaderboard'>Name: {quiz.performedByName}</div>
+                    <div className='scoreLeaderboard'>Score: {quiz.score}</div>
+                    <div className='dateLeaderboard'>{`Date: ${quiz.date}`}</div>
+                    <div className='timeLeaderboard'>{`Time: ${quiz.time}`}</div>
                 </div>
             )
         }
@@ -32,7 +31,7 @@ function LeaderboardView(props: any){
                 <option value="linux">Linux</option>
                 <option value="bash">Bash</option>
                 <option value="kubernetes">Kubernetes</option>
-            </select>
+            </select> <br></br> <br></br>
             {renderPerformedQuizzes()}
             <button onClick = {() => {window.location.hash="#quizselector";}}>Start a new game</button>
         </div>

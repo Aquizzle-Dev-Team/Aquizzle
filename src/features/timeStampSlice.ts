@@ -10,10 +10,13 @@ export const timeStampSlice = createSlice({
     reducers: {
         changeTimeStamp: (state, action: PayloadAction<any>) => {
             state.value = action.payload
+        },
+        incrementTimeStamp: (state) => {
+            state.value += 1;
         }
     }
 })
 
-export const { changeTimeStamp } = timeStampSlice.actions;
+export const { changeTimeStamp, incrementTimeStamp } = timeStampSlice.actions;
 
 export default timeStampSlice.reducer;

@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { ActionCreatorWithPayload } from '@reduxjs/toolkit';
+import { useReducer, useState } from 'react';
+import { incrementTimeStamp } from '../features/timeStampSlice';
 import HomePageButtonsView from '../views/homePageButtonsView';
 
 export default function HomePageButtons() {
@@ -6,8 +8,11 @@ export default function HomePageButtons() {
 
     const setAuthStateActions = require('../authStateListener').default;
     
-    setAuthStateActions(() => {changeLoggedInState(true);},
-                        () => {changeLoggedInState(false);});
+    setAuthStateActions(
+        () => {changeLoggedInState(true);},
+        () => {changeLoggedInState(false);}
+    );
+
 
     return <HomePageButtonsView
         handleAuthClick={ () => {
@@ -19,3 +24,5 @@ export default function HomePageButtons() {
         authStateText={isLoggedIn ? 'My Account' : 'Login / Sign Up'}
     />;
 }
+
+

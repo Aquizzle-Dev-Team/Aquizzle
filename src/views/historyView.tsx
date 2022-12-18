@@ -5,12 +5,10 @@ function HistoryView(props: any){
         const performedQuizCB = (quiz, key) => {
             return (
                 <div key={key} className="completedQuiz">
-                    <div className='quizType'>Quiz: {quiz.typeOfQuiz}</div>
-                    <div className='score'>Score: {quiz.score}</div>
-                    <div className='quizuid'>uid: {quiz.performedByuid}</div>
-                    <div className='performedBy'>name: {quiz.performedByName}</div>
-                    <div className='dateAndTime'>{`Date: ${quiz.date}`}</div>
-                    <div className='dateAndTime'>{`Time: ${quiz.time}`}</div>
+                    <div className='quizType'>Quiz played: {quiz.typeOfQuiz}</div>
+                    <div className='score'>Your score: {quiz.score}</div>
+                    <div className='date'>{`Date: ${quiz.date}`}</div>
+                    <div className='time'>{`Performed at: ${quiz.time}`}</div>
                 </div>
             )
         }
@@ -34,7 +32,7 @@ function HistoryView(props: any){
                 <option value="linux">Linux</option>
                 <option value="bash">Bash</option>
                 <option value="kubernetes">Kubernetes</option>
-            </select>
+            </select> <br></br> <br></br>
             {renderPerformedQuizzes()}
             <button onClick = {() => {window.location.hash="#quizselector";}}>Start a new game</button>
         </div>
