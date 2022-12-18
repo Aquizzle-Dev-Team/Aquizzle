@@ -25,10 +25,6 @@
     border: solid #CA3E47 2px;
 }
 
-.historyDiv button:hover {
-    color: gray;
-}
-
 .historyDiv button:active {
     transform: scale(0.98);
 }

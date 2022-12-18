@@ -17,9 +17,6 @@
     font-size: 20px;
     border: solid 2px #CA3E47;
 }
-.Div button:hover{
-    color: gray;
-}
 
 .Div button:active {
     transform: scale(0.98);

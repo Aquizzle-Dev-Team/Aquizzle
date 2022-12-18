@@ -7,12 +7,12 @@ function StartQuizView(props: any){
     const [isToggled, setToggle] = useState(false);
     const [isToggled2, setToggle2] = useState(false);
 
-    const fade = useSpring({
+    const fillButton = useSpring({
         backgroundColor: isToggled ? '#CA3E47' : '#222222',
         config: { tension: 210, friction: 20 }
     })
 
-    const fade2 = useSpring({
+    const fillButton2 = useSpring({
         backgroundColor: isToggled2 ? '#CA3E47' : '#222222',
         color: 'white',
         config: { tension: 210, friction: 20 }
@@ -22,13 +22,13 @@ function StartQuizView(props: any){
         <div className = "startQuizDiv">
             <img src={logo} alt="Logo"/>
             <animated.button 
-            style={fade}
+            style={fillButton}
             onMouseEnter={() => setToggle(!isToggled)} 
             onMouseLeave={() => setToggle(!isToggled)}
             className="seeYourHistory" 
             onClick = {() => {window.location.hash="#history";}} >See your progress</animated.button>
             <animated.button 
-            style={fade2}
+            style={fillButton2}
             onMouseEnter={() => setToggle2(!isToggled2)} 
             onMouseLeave={() => setToggle2(!isToggled2)}
             className="startNewGame" 
