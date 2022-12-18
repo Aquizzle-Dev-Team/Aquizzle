@@ -9,6 +9,7 @@ import { addQuestions, resetQuestionsState } from '../features/questionSlice';
 import { addPerformedQuiz } from '../features/performedQuizSlice';
 import { firebaseApp } from '../firebaseConfig';
 import { getAuth } from '@firebase/auth';
+import { getDatabase, ref, push, set } from '@firebase/database';
 import { incrementIndex, setIndex } from '../features/indexSlice';
 import { addPromiseState } from '../features/promiseStateSlice';
 import { getQuestions } from '../quizSource';
@@ -32,7 +33,6 @@ function Quiz(){
     const points = useSelector((state: RootState) => state.points.value);
     const healthBar = useSelector((state: RootState) => state.healthBar.value);
     const allQuestions = useSelector((state: RootState) => state.questions.value);
-    const auth = getAuth(firebaseApp);
     
     let currentDate = new Date();
     
@@ -40,6 +40,42 @@ function Quiz(){
     const timeStamp = useSelector((state: RootState) => state.timeStamp.value);
     
     const dispatch = useDispatch();
+
+    function savePerformedQuiz(pointsToStore: number = points) {
+        const user = getAuth(firebaseApp).currentUser;
+        const db = getDatabase(firebaseApp);
+
+        let date = currentDate.getDate() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getFullYear();
+        let time = currentDate.getHours() + ":" + currentDate.getMinutes();
+        const quizInfo = {
+            typeOfQuiz: chosenQuiz,
+            date: date,
+            time: time,
+            performedByuid: user.uid,
+            performedByName: user.displayName,
+            score: pointsToStore
+        }
+        
+        dispatch(addPerformedQuiz(quizInfo));
+        
+        // Save to db
+        const userRef = ref(db, `users/${user.uid}`);
+        const newQuizRef = push(userRef);
+        set(newQuizRef, {
+            quizInfo
+        });
+    }
+
+    const preventGoBackPageCheating = () => {
+        dispatch(setQuestion("You have lost!"))
+        dispatch(setAnswerA(""));
+        dispatch(setAnswerB(""));
+        dispatch(setAnswerC(""));
+        dispatch(setAnswerD(""));
+        dispatch(setAnswerE(""));
+        dispatch(setAnswerF(""));
+        dispatch(initialHealthBarValue(0))
+    };
 
     const updateQuestionsOnClick = () =>{
         if(index < allQuestions.length - 1)
@@ -96,46 +132,31 @@ function Quiz(){
         dispatch(setAnswerF(randomAnswer[5]));
     }
 
-    const clickedOnRightAnswerHandler = () =>{
+    const clickedOnRightAnswerHandler = () => {
         dispatch(increment());
+        if (index === allQuestions.length - 1) {
+            window.location.hash = "#win";
+            savePerformedQuiz(points+1);
+        }
+        else
+            updateQuestionsOnClick();
     }    
 
-    const clickedOnWrongAnswerHandler = () =>{
-        if(healthBar === 1){
-
-            let date = currentDate.getDate() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getFullYear();
-            let time = currentDate.getHours() + ":" + currentDate.getMinutes();
-            const quizInfo = {
-                typeOfQuiz: chosenQuiz,
-                date: date,
-                time: time,
-                performedByuid: auth.currentUser.uid,
-                performedByName: auth.currentUser.displayName,
-                score: points
-            }
-            dispatch(addPerformedQuiz(quizInfo));
-
-            window.location.hash = "#death"
-
-            dispatch(resetQuestionsState())
-        
-            dispatch(setQuestion("You have lost!"))
-            dispatch(setAnswerA(""));
-            dispatch(setAnswerB(""));
-            dispatch(setAnswerC(""));
-            dispatch(setAnswerD(""));
-            dispatch(setAnswerE(""));
-            dispatch(setAnswerF(""));
-            dispatch(initialHealthBarValue(0))
-        } else{
-            dispatch(decrementHealthBar())
+    const clickedOnWrongAnswerHandler = () => {
+        if (healthBar === 1) {
+            savePerformedQuiz();
+            preventGoBackPageCheating();
+            dispatch(resetQuestionsState());
+            window.location.hash = "#death";
         }
+        else
+            dispatch(decrementHealthBar());
     }    
 
     function isCorrectAnswer(answer){
         const answers = allQuestions[index].answers;
         const correctAnswers = allQuestions[index].correct_answers;
-        return correctAnswers[`${Object.keys(answers).find(key => answers[key] === answer)}_correct`] === "true" ? true : false;
+        return correctAnswers[`${Object.keys(answers).find(key => answers[key] === answer)}_correct`] === "true";
     }
 
     const clickedOnAnswerHandler = (e: any) =>{
@@ -143,12 +164,6 @@ function Quiz(){
             clickedOnRightAnswerHandler();
         else
             clickedOnWrongAnswerHandler();
-        
-        if(index < allQuestions.length - 1){
-            updateQuestionsOnClick()
-        } else {
-            window.location.hash = "#win"
-        }
     }
 
     return(
