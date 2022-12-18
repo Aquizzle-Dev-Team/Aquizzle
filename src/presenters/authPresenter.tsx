@@ -1,4 +1,4 @@
-import { getAuth, connectAuthEmulator, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from '@firebase/auth';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from '@firebase/auth';
 import { sha256 } from 'js-sha256';
 import { useState } from 'react';
 import { getMessageFromError } from '../authErrorMessageHandler';
@@ -11,34 +11,6 @@ export default function Auth() {
     const [errorMessage, setErrorMessage] = useState('');
 
     const auth = getAuth(firebaseApp);
-
-    // REMOVE FOR PRODUCTION BUILD
-    try {
-        connectAuthEmulator(auth, 'http://localhost:9099');
-    } catch{};
-
-/*     const handleAuthError = (errorCode: string) => {
-        switch(errorCode.split('/')[1]) {
-            default:
-                setErrorMessage('Something went wrong.');
-                break;
-            case 'invalid-email':
-                setErrorMessage('Please enter a valid email address.');
-                break;
-            case 'email-already-in-use':
-                setErrorMessage('The email is already in use.')
-                break;
-            case 'user-not-found':
-                setErrorMessage('There is no user with that email address.');
-                break;
-            case 'wrong-password':
-                setErrorMessage('Incorrect password.');
-                break;
-            case 'weak-password':
-                setErrorMessage('Your password must be at least 6 characters long.');
-                break;
-        }
-    }; */
 
     return <AuthView
         handleEmailChange={(e) => {
