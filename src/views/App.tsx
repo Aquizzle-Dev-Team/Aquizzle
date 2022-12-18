@@ -63,6 +63,7 @@ function App() {
       <Show hash = "#aboutus"><AboutUs className="aboutUs"/></Show>
 
       <Show hash = "#quiz"><Quiz className="quiz"/></Show>
+      <Footer/>
     </div>
   );
 }

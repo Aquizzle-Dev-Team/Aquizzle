@@ -8,8 +8,7 @@
     grid-template-areas:
     "accountTitle accountTitle accountTitle accountTitle"
     "usernameChange username emailChange email"
-    "logOutButton logOutButton backHomeButton backHomeButton"
-    "changeBackgroundColor changeBackgroundColor changeBackgroundImage changeBackgroundImage";
+    "logOutButton logOutButton backHomeButton backHomeButton";
     border: solid black;
     border-radius: 25px;
     background-color:#313541;
@@ -68,9 +67,6 @@
 .myAccountDiv button:active {
     transform: scale(0.98);
 }
-.myAccountDiv .changeBackgroundColor{
-    grid-area: changeBackgroundColor;
-}
 
 .myAccountDiv .logOutButton{
     grid-area: logOutButton;
@@ -78,8 +74,4 @@
 
 .myAccountDiv .backHomeButton{
     grid-area: backHomeButton;
-}
-
-.myAccountDiv .changeBackgroundImage{
-    grid-area: changeBackgroundImage;
 }

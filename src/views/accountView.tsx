@@ -10,8 +10,6 @@ export default function AccountView(props: any) {
             <a href='/#changeemail' className="emailChange">change</a>
             <button className="logOutButton" onClick={props.logout}>Logout</button>
             <button className="backHomeButton" onClick={() => {window.location.hash='#homepage'}}>Back to home</button>
-            <button className="changeBackgroundColor" onClick={props.changeColor}>Change your background color</button>
-            <button className="changeBackgroundImage" onClick={props.changeImage}>Change your background image</button>
         </div>
     );
 }
