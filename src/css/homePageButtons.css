@@ -7,15 +7,15 @@
     "history leaderboard aboutUs something";
     grid-area: homePageButtons;
     border-bottom: solid;
-    background-color:#313541;
+    background-color:#414141;
 }
 .Div button{
     margin: 20px;   
-    border-radius: 100px;
-    background-color: rgb(32, 32, 32);
+    border-radius: 25px;
+    background-color: #222222;
     color: white;
-    font-size: 15px;
-    border: solid 3px black;
+    font-size: 20px;
+    border: solid 2px #CA3E47;
 }
 .Div button:hover{
     color: gray;

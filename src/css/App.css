@@ -1,3 +1,17 @@
+@font-face {
+  font-family: 'Frutiger';
+  src: url(../fonts/Frutiger\ LT\ Std\ 55\ Roman\ Regular.otf);
+}
+
+#root{
+  font-family: 'Frutiger';
+  background-color: #313131;
+}
+
+button {
+  font-family: 'Frutiger';
+}
+
 .App {
   text-align: center;
   display: grid;

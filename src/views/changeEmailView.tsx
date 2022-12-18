@@ -9,7 +9,7 @@ export default function ChangeEmailView(props: any) {
                 placeholder={'example@aquizzle.com'}/>
             <p className="changeEmailError">{props.errorMessage}</p>
             <button className="changeEmailConfirm" onClick={props.changeEmail}>Confirm Email</button>
-            <button className="changeEmailBackHome" onClick={() => {window.location.hash='#homepage';}}>Back to home</button>
+            <button className="changeEmailBackHome" onClick={() => {window.location.hash='#account';}}>Back</button>
         </div>
     );
 }

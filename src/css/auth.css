@@ -15,7 +15,7 @@
     "forgotYourPassword forgotYourPassword";
     border: solid black;
     border-radius: 25px;
-    background-color:#313541;
+    background-color:#414141;
     padding: 10px;
     color: white;
 }
@@ -29,8 +29,8 @@
     border-radius: 100px;
     background-color: rgb(32, 32, 32);
     color: white;
-    font-size: 15px;
-    border: solid 3px black;
+    font-size: 20px;
+    border: solid #CA3E47 2px;
 }
 
 .logInDiv .logInTitle{

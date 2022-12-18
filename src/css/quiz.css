@@ -1,6 +1,5 @@
 .quizDiv{
-    background-color:#313541;
-    box-shadow: 10px 10px 10px;
+    background-color:#414141;
     border-radius: 20px;
     text-align: center;
     margin: auto;
@@ -39,6 +38,10 @@
     margin-right: auto;
     background-color: rgb(32, 32, 32);
     color: white;
+    border: solid #CA3E47 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 35%;
 }
 .answer2{
     grid-area: answer2;
@@ -50,6 +53,10 @@
     margin-right: auto;
     background-color: rgb(32, 32, 32);
     color: white;
+    border: solid #CA3E47 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 35%;
 }
 .answer3{
     grid-area: answer3;
@@ -61,6 +68,10 @@
     margin-right: auto;
     background-color: rgb(32, 32, 32);
     color: white;
+    border: solid #CA3E47 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 35%;
 }
 .answer4{
     grid-area: answer4;
@@ -72,6 +83,10 @@
     margin-right: auto;
     background-color: rgb(32, 32, 32);
     color: white;
+    border: solid #CA3E47 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 35%;
 }
 
 .answer5{
@@ -84,6 +99,10 @@
     margin-right: auto;
     background-color: rgb(32, 32, 32);
     color: white;
+    border: solid #CA3E47 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 35%;
 }
 
 .answer6{
@@ -96,6 +115,10 @@
     margin-right: auto;
     background-color: rgb(32, 32, 32);
     color: white;
+    border: solid #CA3E47 1px;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 35%;
 }
 
 .cancelQuiz {
@@ -110,9 +133,9 @@
 .counter{
     grid-area: counter;
     font-size: 25px;
-    color: green;
-    -webkit-text-stroke: 1.25px black;
+    color: white;
     margin-top: 0px;
+    font-size: 30px;
 }
 
 .lives{
@@ -123,7 +146,7 @@
 }
 
 .lives img{
-    width: 20px;
+    width: 50px;
 }
 
 .hide{

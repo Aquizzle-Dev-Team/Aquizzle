@@ -1,9 +1,10 @@
 .logoDiv{
     text-align: center;
-    background-color: #30303000;
     grid-area: logo;
     border-bottom: solid;
-    background-color:#313541;
+    background-color:#414141;
+    padding-top: 11px;
+    padding-left: 11px;
 }
 .logoDiv img{
     height: 88%;

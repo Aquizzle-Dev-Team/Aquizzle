@@ -9,9 +9,8 @@
     "accountTitle accountTitle accountTitle accountTitle"
     "usernameChange username emailChange email"
     "logOutButton logOutButton backHomeButton backHomeButton";
-    border: solid black;
     border-radius: 25px;
-    background-color:#313541;
+    background-color: #414141;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
@@ -57,7 +56,7 @@
     background-color: rgb(32, 32, 32);
     color: white;
     font-size: 15px;
-    border: solid 3px black;
+    border: solid #CA3E47 2px;
     padding: 10px;
     width: 50%;
     margin-left: auto;

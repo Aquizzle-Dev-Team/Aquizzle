@@ -8,7 +8,7 @@ export default function SetUsernameView(props: any) {
             <input className="newUsername" id='setUsernameInput' onChange={props.handleUsernameChange} placeholder={'example'}></input>
             <p className="newUsernameError">{props.errorMessage}</p>
             <button className="setNewUsername" onClick={props.setUsername}>Set Username</button>
-            <button className="setUsernameBackHome" onClick={() => {window.location.hash='#homepage';}}>Back to home</button>
+            <button className="setUsernameBackHome" onClick={() => {window.location.hash='#account';}}>Back</button>
         </div>
     );
 }

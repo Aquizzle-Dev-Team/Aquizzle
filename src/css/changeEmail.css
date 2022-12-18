@@ -11,9 +11,8 @@
     "changeEmailInput changeEmailInput"
     "changeEmailError changeEmailError"
     "changeEmailConfirm changeEmailBackHome";
-    border: solid black;
     border-radius: 25px;
-    background-color:#313541;
+    background-color: #414141;
     padding: 10px;
     color: white;
 }
@@ -27,7 +26,7 @@
     background-color: rgb(32, 32, 32);
     color: white;
     font-size: 15px;
-    border: solid 3px black;
+    border: solid #CA3E47 2px;
 }
 .changeEmailDiv .changeEmailTitle{
     grid-area: changeEmailTitle;

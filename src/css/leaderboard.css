@@ -3,11 +3,10 @@
     margin-right: auto;
     width: 50%;
     grid-area: leaderboard;
-    background-color:#313541;
+    background-color: #414141;
     border-radius: 25px;
-    border: solid rgba(255, 165, 0, 1) 2px;
-    box-shadow: 10px 10px 10px;
     margin-bottom: 50px;
+    padding: 10px;
 }
 .leaderboardDiv h2{
     color: white;
@@ -19,10 +18,11 @@
 .leaderboardDiv button{
     margin: 20px;   
     border-radius: 100px;
-    background-color: rgb(32, 32, 32);
+    background-color: #222222;
     color: white;
     font-size: 15px;
     padding: 15px;
+    border: solid #CA3E47 2px;
 }
 .leaderboardDiv button:hover {
     color: gray;
@@ -35,7 +35,7 @@
     text-align: left;
     margin: 5px auto 5px auto;
     width: 50%;
-    border: solid black 2px;
+    border: solid #CA3E47 2px;
     border-radius: 5px;
     color: white;
     padding: 10px;
@@ -46,7 +46,7 @@
     "name name"
     "score score"
     "date date";
-    background-color:rgb(32, 47, 47);
+    background-color:#525252;
 
 }
 

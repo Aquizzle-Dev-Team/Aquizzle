@@ -1,6 +1,6 @@
 .quizSelectorContainer {
     margin: auto;
-    background-color: #313541;
+    background-color: #414141;
     color: black;
     grid-area: quizSelector;
     display: grid;
@@ -8,7 +8,6 @@
     "title title title title" 
     "card card card card"
     "card card card card";
-    border: solid white 2px;
     border-radius: 5px;
     width: fit-content;
 }
@@ -19,8 +18,8 @@
 }
 
 .selectorCards {
-    background-color: white;
-    border: solid rgba(255, 165, 0, 1) 2px;
+    background-color: #414141;
+    border: solid #CA3E47 2px;
     width: 150px;
     height: 175px;
     vertical-align: bottom;
@@ -46,7 +45,7 @@
     
 }
 .selectorCards:hover {
-    background-color: darkgrey;
+    background-color: #313131;
 }
 
 
