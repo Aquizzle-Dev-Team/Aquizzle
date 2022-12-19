@@ -1,4 +1,4 @@
-##How to setup:
+## How to setup:
 **1.** Install all required node.js modules by running the following command in Aquizzle/:
 ```bash
 npm install
@@ -77,10 +77,10 @@ export {API_KEY, BASE_URL};
 
 **8.** Use the command `npm start` to run a local development build, or `npm run build` to create an optimised production build.
 
-##Deploying
+## Deploying
 First run `npm run build` to create an optimised production build and then deploy using the command `firebase deploy`.
 
-##About this project
+## About this project
 This is a project worked on by computer engineering students at KTH. We are developing a quiz website using react redux. The basic functionality for the website is the ability to take a quiz and save your results to a leaderboard which ranks all results accoring to different criteria. We also intend on having a history page where a user can see the different quiz they have performed and the result of said quiz. 
 
 What we have done is deployed the React app to firebase, we setup the code to fetch data from the quiz api and made our first simple quiz with a question and answer that shows if you have chosen the right answer. The setup for the redux react structure with an storing and diplaying a question.
