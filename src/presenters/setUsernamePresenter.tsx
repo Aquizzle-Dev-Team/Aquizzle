@@ -15,9 +15,12 @@ export default function SetUsername() {
             if (username.length > 0) {
                 updateProfile(getAuth(firebaseApp).currentUser, {
                     displayName: username
+                }).then(() => {
+                    setErrorMessage('');
+                    window.location.hash=`#account`;
+                }).catch(() => {
+                    setErrorMessage('Something went wrong.');
                 });
-                setErrorMessage('');
-                window.location.hash='#account';
             }
             else
                 setErrorMessage('You must enter a username.');
