@@ -12,7 +12,9 @@ export default function ResetEmail() {
     if (window.location.hash.split('?')[0] === '#resetemail') {
         applyActionCode(auth, code).then(() => {
             window.location.hash = '#resetsuccess';
-        }).catch((error) => {});
+        }).catch((error) => {
+            window.location.hash = '#resetfail';
+        });
     }
 
     return <div>
