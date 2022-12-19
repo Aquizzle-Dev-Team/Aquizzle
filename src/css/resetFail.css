@@ -1,4 +1,4 @@
-.resetSuccessDiv{
+.resetFailDiv{
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -6,12 +6,12 @@
     grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-    "resetSuccessTitle"
-    "resetSuccessContinue";
+    "resetFailTitle"
+    "resetFailContinue";
     border-radius: 25px;
     padding: 10px;
 }
-.resetSuccessDiv button{
+.resetFailDiv button{
     margin: 10px;
     width: 25%;
     padding: 7px;
@@ -23,16 +23,16 @@
     font-size: 15px;
     border: solid 2px #CA3E47;
 }
-.resetSuccessDiv .resetSuccessTitle{
-    grid-area: resetSuccessTitle;
+.resetFailDiv .resetFailTitle{
+    grid-area: resetFailTitle;
     color: white;
 }
 
-.resetSuccessDiv .resetSuccessContinue{
-    grid-area: resetSuccessContinue;
+.resetFailDiv .resetFailContinue{
+    grid-area: resetFailContinue;
     font-size: 20px;
 }
 
-.resetSuccessDiv button:active {
+.resetFailDiv button:active {
     transform: scale(0.98);
 }

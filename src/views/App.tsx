@@ -20,6 +20,7 @@ const SetUsername=require("../presenters/setUsernamePresenter").default;
 const ForgottenPassword=require("../presenters/forgottenPasswordPresenter").default;
 const ResetPassword=require("../presenters/resetPasswordPresenter").default;
 const ResetSuccess=require("../presenters/resetSuccessPresenter").default;
+const ResetFail=require("../presenters/resetFailPresenter.tsx").default;
 const Account=require("../presenters/accountPresenter").default;
 const ChangeEmail=require("../presenters/changeEmailPresenter").default;
 const Win=require("../presenters/winPresenter.tsx").default;
@@ -35,34 +36,22 @@ function App() {
       <HomePageButtons className="homePageButtons"/>
 
       <Show hash = "#win"><Win/></Show>
-
       <Show hash = "#death"><Death/></Show>
-
       <Show hash = "#history"><History/></Show>
-
       <Show hash = "#leaderboard"><Leaderboard className="leaderboard"/></Show>
-      
-      <Show hash="#auth"><Auth className="auth"/></Show>
-
-      <Show hash="#setusername"><SetUsername className="setUsername"/></Show>
-
-      <Show hash="#forgottenpassword"><ForgottenPassword className="forgottenPassword"/></Show>
-
-      <Show hash="#resetpassword"><ResetPassword className="resetPassword"/></Show>
-
-      <Show hash="#resetsuccess"><ResetSuccess className="resetSuccess"/></Show>
-
-      <Show hash="#account"><Account className="account"/></Show>
-
-      <Show hash="#changeemail"><ChangeEmail className="changeEmail"/></Show>
-
+      <Show hash = "#auth"><Auth className="auth"/></Show>
+      <Show hash = "#setusername"><SetUsername className="setUsername"/></Show>
+      <Show hash = "#forgottenpassword"><ForgottenPassword className="forgottenPassword"/></Show>
+      <Show hash = "#resetpassword"><ResetPassword className="resetPassword"/></Show>
+      <Show hash = "#resetsuccess"><ResetSuccess className="resetSuccess"/></Show>
+      <Show hash = "#resetfail"><ResetFail className = "resetFail"></ResetFail></Show>
+      <Show hash = "#account"><Account className="account"/></Show>
+      <Show hash = "#changeemail"><ChangeEmail className="changeEmail"/></Show>
       <Show hash = "#quizselector"><QuizSelector className="quizSelector"/></Show>
-
       <Show hash = "#homepage"><StartQuiz class="startHomePage"/></Show>
-    
       <Show hash = "#aboutus"><AboutUs className="aboutUs"/></Show>
-
       <Show hash = "#quiz"><Quiz className="quiz"/></Show>
+
       <Footer/>
     </div>
   );
