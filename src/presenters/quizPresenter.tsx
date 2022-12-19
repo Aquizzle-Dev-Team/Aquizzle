@@ -57,7 +57,7 @@ function Quiz(){
         }
         
         dispatch(setPerformedQuizState([...quizzes, quizInfo]));
-        storePerformedQuizInDB(`users/${quizInfo.performedByuid}`, quizInfo);
+        storePerformedQuizInDB(`users/${quizInfo.performedByuid}/performedQuizzes`, quizInfo);
     }
 
     const preventGoBackPageCheating = () => {
