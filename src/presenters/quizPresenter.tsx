@@ -6,17 +6,18 @@ import { increment, initialPointsValue} from '../features/counter/pointsSlice';
 import { decrementHealthBar, initialHealthBarValue} from '../features/healthBarSlice';
 import { setQuestion, setAnswerA, setAnswerB, setAnswerC, setAnswerD, setAnswerE, setAnswerF } from '../features/quizQuestionAnswerSlice';
 import { addQuestions, resetQuestionsState } from '../features/questionSlice';
-import { addPerformedQuiz } from '../features/performedQuizSlice';
+import { addPerformedQuiz, setPerformedQuizState } from '../features/performedQuizSlice';
 import { firebaseApp } from '../firebaseConfig';
 import { getAuth } from '@firebase/auth';
-import { getDatabase, ref, push, set } from '@firebase/database';
 import { incrementIndex, setIndex } from '../features/indexSlice';
 import { addPromiseState } from '../features/promiseStateSlice';
 import { getQuestions } from '../quizSource';
+import { storePerformedQuizInDB } from '../dbHandler';
 
 
 export default
 function Quiz(){
+    const quizzes = useSelector((state: RootState) => state.performedQuiz.value);
 
     const question = useSelector((state: RootState) => state.QnA.question)
     const answerA = useSelector((state: RootState) => state.QnA.answerA)
@@ -43,7 +44,6 @@ function Quiz(){
 
     function savePerformedQuiz(pointsToStore: number = points) {
         const user = getAuth(firebaseApp).currentUser;
-        const db = getDatabase(firebaseApp);
 
         let date = currentDate.getDate() + "/" + (currentDate.getMonth() + 1) + "/" + currentDate.getFullYear();
         let time = currentDate.getHours() + ":" + currentDate.getMinutes();
@@ -56,14 +56,8 @@ function Quiz(){
             score: pointsToStore
         }
         
-        dispatch(addPerformedQuiz(quizInfo));
-        
-        // Save to db
-        const userRef = ref(db, `users/${user.uid}`);
-        const newQuizRef = push(userRef);
-        set(newQuizRef, {
-            quizInfo
-        });
+        dispatch(setPerformedQuizState([...quizzes, quizInfo]));
+        storePerformedQuizInDB(`users/${quizInfo.performedByuid}`, quizInfo);
     }
 
     const preventGoBackPageCheating = () => {
@@ -87,7 +81,6 @@ function Quiz(){
         dispatch(addPromiseState(true));
         if(window.location.hash === "#quiz")
             getQuestions({"tags": chosenQuiz}).then((result) => {
-                console.log(result)
                 dispatch(addPromiseState(false));
                 dispatch(resetQuestionsState())
                 dispatch(setIndex(0))

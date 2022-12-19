@@ -4,38 +4,47 @@ import HistoryView from '../views/historyView'
 import { firebaseApp } from '../firebaseConfig';
 import { getAuth } from '@firebase/auth';
 import { useState } from 'react';
+import { fetchPerformedQuizzesFromDB } from '../dbHandler';
 
 export default
 function History(){
     const auth = getAuth(firebaseApp);
-    const quiz = useSelector((state: RootState) => state.PerformedQuiz.value).filter((quiz) => {
-        if(quiz.performedByuid === auth?.currentUser.uid) return true;
+    const [quizzes, setQuizzes] = useState([]);
+    const [quizFilter, changeQuizFilter] = useState('all');
+
+    fetchPerformedQuizzesFromDB().then((quizzes) => {
+       const quizzesByCurrentUserSortedByDate = quizzes.filter((quiz) => {
+            return quiz.performedByuid === auth?.currentUser?.uid;
+        }).reverse();
+
+        if (quizFilter !== 'all') {
+            setQuizzes(quizzesByCurrentUserSortedByDate.filter((quiz) => {
+                return quiz.typeOfQuiz === quizFilter;
+            }));
+        }
+        else
+            setQuizzes(quizzesByCurrentUserSortedByDate);
     });
-    const [filteredQuiz, changeFilteredQuiz] = useState(quiz)
-
-    //console.log(auth?.currentUser.displayName);
-    
-
 
     const quizToShow = (e:any) => {
-
-        let quizSortedByScore = [...quiz].sort((a :any, b : any) => {return (b.score-a.score)})
+        changeQuizFilter(e.target.value);
+/*         const quizSortedByDate = [...filteredQuiz].reverse();
 
         if (e.target.value === "all") {
-            changeFilteredQuiz(quizSortedByScore);
+            changeFilteredQuiz(quizSortedByDate);
         } else {
         const filterQuizByType = (quiz) => {
             if(quiz.typeOfQuiz === e.target.value) return true;
         }
-        changeFilteredQuiz(quizSortedByScore.filter(filterQuizByType));
-        }
+        changeFilteredQuiz(quizSortedByDate.filter(filterQuizByType));
+        } */
 
         
     }
 
     return(
     <HistoryView
-        quizPerformed = {filteredQuiz}
+        quizPerformed = {quizzes}
         selectQuizToShow = {quizToShow}
     />
     )

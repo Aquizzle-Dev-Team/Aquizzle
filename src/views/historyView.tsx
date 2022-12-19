@@ -16,8 +16,6 @@ function HistoryView(props: any){
             props.quizPerformed.map(performedQuizCB)
         )
     }
-
-    console.log(props.quizPerformed);
     
     return (
         <div className="historyDiv">
