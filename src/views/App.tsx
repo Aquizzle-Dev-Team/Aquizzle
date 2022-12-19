@@ -18,7 +18,9 @@ const History=require("../presenters/historyPresenter.tsx").default;
 const Auth=require("../presenters/authPresenter").default;
 const SetUsername=require("../presenters/setUsernamePresenter").default;
 const ForgottenPassword=require("../presenters/forgottenPasswordPresenter").default;
+const Reset=require("../presenters/resetPresenter").default;
 const ResetPassword=require("../presenters/resetPasswordPresenter").default;
+const ResetEmail=require("../presenters/resetEmailPresenter").default;
 const ResetSuccess=require("../presenters/resetSuccessPresenter").default;
 const Account=require("../presenters/accountPresenter").default;
 const ChangeEmail=require("../presenters/changeEmailPresenter").default;
@@ -48,7 +50,11 @@ function App() {
 
       <Show hash="#forgottenpassword"><ForgottenPassword className="forgottenPassword"/></Show>
 
+      <Show hash="#reset"><Reset/></Show>
+
       <Show hash="#resetpassword"><ResetPassword className="resetPassword"/></Show>
+
+      <Show hash="#resetemail"><ResetEmail/></Show>
 
       <Show hash="#resetsuccess"><ResetSuccess className="resetSuccess"/></Show>
 

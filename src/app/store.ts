@@ -6,8 +6,8 @@ import quizSelectorReducer from '../features/quizSelectorSlice';
 import quizQuestionAnswerReducer from '../features/quizQuestionAnswerSlice';
 import timeStampReducer from '../features/timeStampSlice'
 import promiseStateReducer from '../features/promiseStateSlice';
-import resetCodeReducer from '../features/resetCodeSlice';
-import addPerformedQuiz from '../features/performedQuizSlice';
+import resetReducer from '../features/resetSlice';
+import performedQuizReducer from '../features/performedQuizSlice';
 import indexReducer from '../features/indexSlice';
 
 export const store = configureStore({
@@ -19,9 +19,9 @@ export const store = configureStore({
     QnA: quizQuestionAnswerReducer,
     timeStamp: timeStampReducer,
     promiseState: promiseStateReducer,
-    resetCode: resetCodeReducer,
+    reset: resetReducer,
     index: indexReducer, 
-    PerformedQuiz: addPerformedQuiz
+    performedQuiz: performedQuizReducer
   },
 })
 
