@@ -16,12 +16,10 @@
     color: white;
 }
 .myAccountDiv .accountTitle{
-    font-family: 'Times New Roman', Times, serif ;
     grid-area: accountTitle;
 }
 
 .myAccountDiv .username{
-    font-family: 'Times New Roman', Times, serif ;
     grid-area: username;
     margin-right: auto;
     margin-left: 10px;
@@ -36,7 +34,6 @@
 }
 
 .myAccountDiv .email{
-    font-family: 'Times New Roman', Times, serif ;
     grid-area: email;
     margin-right: auto;
     margin-left: 10px;

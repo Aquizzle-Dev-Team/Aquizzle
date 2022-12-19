@@ -15,7 +15,7 @@
     background-color: rgb(32, 32, 32);
     color: white;
     font-size: 15px;
-    border: solid 3px black;
+    border: solid 2px #CA3E47;
     margin: 20px;
     margin-left: auto;
     margin-right: auto;
@@ -30,7 +30,7 @@
     grid-area: deathimage;
     margin-left: auto;
     margin-right: auto;
-    animation: fadeIn 5s;
+    width: 400px;
 }
 
 .deathDiv .newQuiz{
@@ -43,9 +43,4 @@
     grid-area: text;
     font-size: 30px;
     color: white;
-}
-
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
 }

@@ -6,7 +6,8 @@
     margin-bottom: 50px;
 }
 .aboutUsDiv p{
-    word-spacing: 1px;
+    text-align: left;
+    word-spacing: 2px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;

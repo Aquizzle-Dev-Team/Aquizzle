@@ -14,14 +14,19 @@ function AboutUsView(props: any){
     return(
         <div className = "aboutUsDiv">
             <img src={logo} alt="Logo"/>
-            <div>About us!</div>
-            <p>This is a project worked on by computer engineering students at KTH. We are developing a quiz website using react redux. The basic functionality for the website is the ability to take a quiz and save your results to a leaderboard which ranks all results accoring to different criteria. We also intend on having a history page where a user can see the different quiz they have performed and the result of said quiz. 
+            <div>About Aquizzle</div>
+            <p>Aquizzle is a website made to aid students in their endeavors to grasp basic 
+                knowledge within different computer science subjects. This is done by a 
+                game-like quiz where students can test and train their knowledge in different 
+                subjects like: JavaScript, HTML, MySQL, Kubernetes and more. <br/><br/> 
+                So if you are a student in need of help to better understand your courses or anyone
+                else just wanting to test their knowledge, try a quiz and see how far up the 
+                leaderboard you can place! <br/><br/>
 
-What we have done is deployed the React app to firebase, we setup the code to fetch data from the quiz api and made our first simple quiz with a question and answer that shows if you have chosen the right answer. The setup for the redux react structure with an storing and diplaying a question.
+                Best regards, <br/>
+                The Aquizzle Team 
 
-What we plan to do in the future is to fully implement redux for the backend functionality of the website. This includes being able to change the hash state and make custom events that changes questions and answers. We also plan on making a leaderboard and being able to choose the type and difficuly of the quiz.
-
-Our project file structure is made up of views, presenters, states and reducers. We have a store and slices (redux terminology) were we store all the data and reducers that changes the state of that data. Views shows all the components in the UI, presenters communicates with the view and also dispatches an action to the reducer and gets updated in the store.</p>
+            </p>
             <animated.button
             style={fillButton}
             onMouseEnter={() => setToggle(!isToggled)} 

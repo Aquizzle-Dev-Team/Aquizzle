@@ -38,14 +38,16 @@ export default function AuthView(props: any) {
             onMouseEnter={() => setToggle(!isToggled)} 
             onMouseLeave={() => setToggle(!isToggled)}
             className="logInButton" 
-            onClick={props.login} disabled={props.emptyInputs}>Log In</animated.button>
+            onClick={props.login} 
+            disabled={props.emptyInputs}>Log In</animated.button>
 
             <animated.button 
             style={fillButton2}
             onMouseEnter={() => setToggle2(!isToggled2)} 
             onMouseLeave={() => setToggle2(!isToggled2)}
             className="signUpButton" 
-            onClick={props.signup} disabled={props.emptyInputs}>Sign Up</animated.button>
+            onClick={props.signup} 
+            disabled={props.emptyInputs}>Sign Up</animated.button>
 
             <a className="forgotYourPassword" href="/#forgottenpassword">Forgot your password?</a>
 
