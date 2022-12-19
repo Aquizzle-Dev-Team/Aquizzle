@@ -6,18 +6,9 @@ function FooterView(){
         <div className="footerDiv">
             {/*<div className="slutetlogo"></div>*/}
         
-            <div className="kontaktaOss">
-                <h3>Skulle du vilja se projektet i GitHub?</h3>
-                <a href="https://github.com/Aquizzle-Dev-Team/Aquizzle" target="_blank"> Tryck här för att komma till projektet </a>
-            </div>
-        
-            <div className="besökOss">
-                <h3>Besök oss</h3>
-                <p>Kistagången 16</p>
-            </div>
-            <div className="stödjaStudenter">
-                <h3>Skulle du vilja stödja några studenter?</h3>
-                <p>Swish: 072-324 28 22</p>
+            <div className="followProject">
+                <h3>Would you like to follow the project?</h3>
+                <a href="https://github.com/Aquizzle-Dev-Team/Aquizzle" target="_blank"> Press here for the github link to the project </a>
             </div>
         </div>
     )

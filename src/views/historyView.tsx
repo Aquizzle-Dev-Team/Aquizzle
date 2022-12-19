@@ -1,3 +1,5 @@
+import { animated, useSpring } from '@react-spring/web'
+import { useState } from 'react'
 import '../css/history.css'
 
 function HistoryView(props: any){
@@ -17,6 +19,14 @@ function HistoryView(props: any){
         )
     }
     
+    const [isToggled, setToggle] = useState(false);
+
+
+    const fillButton = useSpring({
+        backgroundColor: isToggled ? '#CA3E47' : '#222222',
+        config: { tension: 210, friction: 20 }
+    })
+
     return (
         <div className="historyDiv">
             <h2>History</h2>
@@ -32,7 +42,11 @@ function HistoryView(props: any){
                 <option value="kubernetes">Kubernetes</option>
             </select> <br></br> <br></br>
             {renderPerformedQuizzes()}
-            <button onClick = {() => {window.location.hash="#quizselector";}}>Start a new game</button>
+            <animated.button
+            style={fillButton}
+            onMouseEnter={() => setToggle(!isToggled)} 
+            onMouseLeave={() => setToggle(!isToggled)} 
+            onClick = {() => {window.location.hash="#quizselector";}}>Start a new game</animated.button>
         </div>
     );
 }

@@ -16,22 +16,25 @@
     margin-right: auto;
 }
 .startQuizDiv button{
-  background-color: rgb(32, 32, 32);
+  background-color: #222222;
   color: white;
-  font-size: 15px;
-  border: solid 3px black;
+  font-size: 25px;
+  border: solid 2px #CA3E47;
   margin-left: auto;
   margin-right: auto;
   border-radius: 100px;
-  width: 50%;
+  width: 70%;
   padding: 10px;
 }
+
 .startQuizDiv button:active {
   transform: scale(0.98);
 }
+
 .startNewGame{
   grid-area: startNewGame;
 }
+
 .seeYourHistory{
   grid-area: seeYourHistory;
 }

@@ -1,28 +1,11 @@
 .logoDiv{
     text-align: center;
-    background-color: #30303000;
     grid-area: logo;
     border-bottom: solid;
-    background-color:#313541;
+    background-color:#414141;
+    padding-top: 11px;
+    padding-left: 11px;
 }
 .logoDiv img{
     height: 88%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-    .logoDiv img {
-      animation: logoDiv-img-float infinite 3s ease-in-out;
-    }
-}
-
-@keyframes logoDiv-img-float {
-    0% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(10px);
-    }
-    100% {
-      transform: translateY(0px);
-    }
-  }

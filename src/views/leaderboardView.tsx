@@ -1,4 +1,6 @@
 import "../css/leaderboard.css";
+import { animated, useSpring } from '@react-spring/web';
+import { useState } from "react";
 
 function LeaderboardView(props: any){
     const renderPerformedQuizzes = () => {
@@ -18,6 +20,14 @@ function LeaderboardView(props: any){
         )
     }
 
+    const [isToggled, setToggle] = useState(false);
+
+
+    const fillButton = useSpring({
+        backgroundColor: isToggled ? '#CA3E47' : '#222222',
+        config: { tension: 210, friction: 20 }
+    })
+
     return (
         <div className="leaderboardDiv">
             <h2>Leaderboard</h2>
@@ -33,7 +43,11 @@ function LeaderboardView(props: any){
                 <option value="kubernetes">Kubernetes</option>
             </select> <br></br> <br></br>
             {renderPerformedQuizzes()}
-            <button onClick = {() => {window.location.hash="#quizselector";}}>Start a new game</button>
+            <animated.button 
+            style={fillButton}
+            onMouseEnter={() => setToggle(!isToggled)} 
+            onMouseLeave={() => setToggle(!isToggled)}
+            onClick = {() => {window.location.hash="#quizselector";}}>Start a new game</animated.button>
         </div>
     );
 }

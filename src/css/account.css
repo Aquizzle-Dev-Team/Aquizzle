@@ -8,22 +8,18 @@
     grid-template-areas:
     "accountTitle accountTitle accountTitle accountTitle"
     "usernameChange username emailChange email"
-    "logOutButton logOutButton backHomeButton backHomeButton"
-    "changeBackgroundColor changeBackgroundColor changeBackgroundImage changeBackgroundImage";
-    border: solid black;
+    "logOutButton logOutButton backHomeButton backHomeButton";
     border-radius: 25px;
-    background-color:#313541;
+    background-color: #414141;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
 }
 .myAccountDiv .accountTitle{
-    font-family: 'Times New Roman', Times, serif ;
     grid-area: accountTitle;
 }
 
 .myAccountDiv .username{
-    font-family: 'Times New Roman', Times, serif ;
     grid-area: username;
     margin-right: auto;
     margin-left: 10px;
@@ -38,7 +34,6 @@
 }
 
 .myAccountDiv .email{
-    font-family: 'Times New Roman', Times, serif ;
     grid-area: email;
     margin-right: auto;
     margin-left: 10px;
@@ -58,7 +53,7 @@
     background-color: rgb(32, 32, 32);
     color: white;
     font-size: 15px;
-    border: solid 3px black;
+    border: solid #CA3E47 2px;
     padding: 10px;
     width: 50%;
     margin-left: auto;
@@ -68,9 +63,6 @@
 .myAccountDiv button:active {
     transform: scale(0.98);
 }
-.myAccountDiv .changeBackgroundColor{
-    grid-area: changeBackgroundColor;
-}
 
 .myAccountDiv .logOutButton{
     grid-area: logOutButton;
@@ -78,8 +70,4 @@
 
 .myAccountDiv .backHomeButton{
     grid-area: backHomeButton;
-}
-
-.myAccountDiv .changeBackgroundImage{
-    grid-area: changeBackgroundImage;
 }

@@ -1,24 +1,23 @@
 .footerDiv{
-    background-color:#313541;
+    background-color:#414141;
     border-top: solid black;
     grid-area: footer;
     display: grid;
-    grid-template-columns: 33% auto 33%;
+    grid-template-columns: auto;
     grid-template-rows: auto;
     grid-template-areas:
-    "kontaktaOss besökOss stödjaStudenter";
+    "followProject";
     color: rgb(177, 177, 177);
+    bottom: 0;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
 }
-.kontaktaOss{
-    grid-area: kontaktaOss;
+.followProject{
+    grid-area: followProject;
+    margin-left: auto;
+    margin-right: auto;
 }
-.besökOss{
-    grid-area: besökOss;
-}
-.stödjaStudenter{
-    grid-area: stödjaStudenter;
-}
-
 .footerDiv a{
     color: rgb(177, 177, 177);
 }

@@ -3,9 +3,11 @@
     margin-left: auto;
     margin-right: auto;
     color: lightgrey;
+    margin-bottom: 50px;
 }
 .aboutUsDiv p{
-    word-spacing: 1px;
+    text-align: left;
+    word-spacing: 2px;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
@@ -18,7 +20,7 @@
     background-color: rgb(32, 32, 32);
     color: white;
     font-size: 15px;
-    border: solid 3px black;
+    border: solid 3px #CA3E47;
     margin: 20px;
     margin-left: auto;
     margin-right: auto;
