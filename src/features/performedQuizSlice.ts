@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface PerformedQuizState {
-    value: PerformedQuiz[];
+    value: PerformedQuiz[]
 };
 
-interface PerformedQuiz {
+export interface PerformedQuiz {
     typeOfQuiz: string,
     date: string,
     time: string,
@@ -23,9 +23,12 @@ export const performedQuizSlice = createSlice({
     reducers: {
         addPerformedQuiz: (state, action: PayloadAction<PerformedQuiz>) => {
             state.value.push(action.payload)
+        },
+        setPerformedQuizState: (state, action: PayloadAction<PerformedQuiz[]>) => {
+            state.value = action.payload;
         }
     },
 })
 
-export const { addPerformedQuiz } = performedQuizSlice.actions;
+export const { addPerformedQuiz, setPerformedQuizState } = performedQuizSlice.actions;
 export default performedQuizSlice.reducer;

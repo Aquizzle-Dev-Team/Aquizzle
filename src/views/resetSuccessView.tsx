@@ -11,14 +11,14 @@ export default function ResetSuccessView(props: any) {
     })
     return (
         <div className="resetSuccessDiv">
-            <h2 className="resetSuccessTitle">Your password was successfully changed!</h2>
+            <h2 className="resetSuccessTitle">Your {props.resetType} was successfully changed!</h2>
             
             <animated.button 
             style={fillButton}
             onMouseEnter={() => setToggle(!isToggled)} 
             onMouseLeave={() => setToggle(!isToggled)}
             className="resetSuccessContinue" 
-            onClick={() => {window.location.hash='#auth'}}>Continue</animated.button>
+            onClick={props.continueClicked}>Continue</animated.button>
         </div>
     );
 }

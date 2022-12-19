@@ -1,9 +1,8 @@
 import { getAuth, confirmPasswordReset } from '@firebase/auth';
 import { sha256 } from 'js-sha256';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../app/store';
-import { setResetCode } from '../features/resetCodeSlice';
 import { firebaseApp } from '../firebaseConfig';
 import ResetPasswordView from '../views/resetPasswordView';
 
@@ -13,13 +12,7 @@ export default function SetUsername() {
     const [errorMessage, setErrorMessage] = useState('');
 
     const auth = getAuth(firebaseApp);
-    const dispatch = useDispatch();
-
-    const resetCode = useSelector((state: RootState) => state.resetCode.value);
-    const oobCode = window.location.hash.split('oobCode=')[1];
-
-    if (oobCode)
-        dispatch(setResetCode(oobCode));
+    const resetCode = window.location.hash.split('oobCode=')[1];
 
     return <ResetPasswordView
         handlePasswordChange={(e) => {
